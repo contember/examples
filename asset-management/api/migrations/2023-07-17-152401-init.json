@@ -1,0 +1,663 @@
+{
+	"formatVersion": 4,
+	"modifications": [
+		{
+			"modification": "createEnum",
+			"enumName": "UserRole",
+			"values": [
+				"admin",
+				"assetManager",
+				"maintenanceTechnician"
+			]
+		},
+		{
+			"modification": "createEnum",
+			"enumName": "TaskPriority",
+			"values": [
+				"low",
+				"medium",
+				"high"
+			]
+		},
+		{
+			"modification": "createEnum",
+			"enumName": "TaskStatus",
+			"values": [
+				"pending",
+				"completed"
+			]
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "User",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "user",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Asset",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "asset",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Category",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "category",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Location",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "location",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "MaintenanceTask",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "maintenance_task",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "personId",
+				"columnName": "person_id",
+				"type": "Uuid",
+				"nullable": true,
+				"columnType": "uuid"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "email",
+				"columnName": "email",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "role",
+				"columnName": "role",
+				"type": "Enum",
+				"nullable": true,
+				"columnType": "UserRole"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Asset",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Asset",
+			"field": {
+				"name": "description",
+				"columnName": "description",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Asset",
+			"field": {
+				"name": "purchaseDate",
+				"columnName": "purchase_date",
+				"type": "Date",
+				"nullable": true,
+				"columnType": "date"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Asset",
+			"field": {
+				"name": "value",
+				"columnName": "value",
+				"type": "Double",
+				"nullable": true,
+				"columnType": "double precision"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Category",
+			"field": {
+				"name": "personId",
+				"columnName": "person_id",
+				"type": "Uuid",
+				"nullable": true,
+				"columnType": "uuid"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Category",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Category",
+			"field": {
+				"name": "description",
+				"columnName": "description",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Location",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Location",
+			"field": {
+				"name": "address",
+				"columnName": "address",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "MaintenanceTask",
+			"field": {
+				"name": "title",
+				"columnName": "title",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "MaintenanceTask",
+			"field": {
+				"name": "description",
+				"columnName": "description",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "MaintenanceTask",
+			"field": {
+				"name": "dueDate",
+				"columnName": "due_date",
+				"type": "Date",
+				"nullable": true,
+				"columnType": "date"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "MaintenanceTask",
+			"field": {
+				"name": "priority",
+				"columnName": "priority",
+				"type": "Enum",
+				"nullable": true,
+				"columnType": "TaskPriority"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "MaintenanceTask",
+			"field": {
+				"name": "status",
+				"columnName": "status",
+				"type": "Enum",
+				"nullable": true,
+				"columnType": "TaskStatus"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Asset",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "category",
+				"target": "Category",
+				"inversedBy": "assets",
+				"joiningColumn": {
+					"columnName": "category_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "assets",
+				"target": "Asset",
+				"ownedBy": "category"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Asset",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "location",
+				"target": "Location",
+				"inversedBy": "assets",
+				"joiningColumn": {
+					"columnName": "location_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "assets",
+				"target": "Asset",
+				"ownedBy": "location"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "MaintenanceTask",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "assignedTechnician",
+				"target": "User",
+				"inversedBy": "assignedTasks",
+				"joiningColumn": {
+					"columnName": "assigned_technician_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "assignedTasks",
+				"target": "MaintenanceTask",
+				"ownedBy": "assignedTechnician"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "MaintenanceTask",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "asset",
+				"target": "Asset",
+				"inversedBy": "maintenanceTasks",
+				"joiningColumn": {
+					"columnName": "asset_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "maintenanceTasks",
+				"target": "MaintenanceTask",
+				"ownedBy": "asset"
+			}
+		},
+		{
+			"modification": "createUniqueConstraint",
+			"entityName": "User",
+			"unique": {
+				"fields": [
+					"personId",
+					"email"
+				],
+				"name": "unique_User_personId_email"
+			}
+		},
+		{
+			"modification": "createUniqueConstraint",
+			"entityName": "Category",
+			"unique": {
+				"fields": [
+					"personId"
+				],
+				"name": "unique_Category_personId"
+			}
+		},
+		{
+			"modification": "patchAclSchema",
+			"patch": [
+				{
+					"op": "add",
+					"path": "/roles/assetManager",
+					"value": {
+						"variables": {
+							"personId": {
+								"type": "predefined",
+								"value": "personID"
+							}
+						},
+						"stages": "*",
+						"entities": {
+							"User": {
+								"predicates": {
+									"predicateUserassetManager ": {
+										"personId": "personId"
+									}
+								},
+								"operations": {
+									"read": {
+										"personId": "predicateUserassetManager ",
+										"name": "predicateUserassetManager ",
+										"email": "predicateUserassetManager ",
+										"role": "predicateUserassetManager ",
+										"assignedTasks": "predicateUserassetManager "
+									},
+									"update": {
+										"personId": "predicateUserassetManager ",
+										"name": "predicateUserassetManager ",
+										"email": "predicateUserassetManager ",
+										"role": "predicateUserassetManager ",
+										"assignedTasks": "predicateUserassetManager "
+									}
+								}
+							},
+							"Asset": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"name": true,
+										"description": true,
+										"category": true,
+										"location": true,
+										"purchaseDate": true,
+										"value": true,
+										"maintenanceTasks": true
+									},
+									"update": {
+										"name": true,
+										"description": true,
+										"category": true,
+										"location": true,
+										"purchaseDate": true,
+										"value": true,
+										"maintenanceTasks": true
+									},
+									"create": {
+										"name": true,
+										"description": true,
+										"category": true,
+										"location": true,
+										"purchaseDate": true,
+										"value": true,
+										"maintenanceTasks": true
+									}
+								}
+							},
+							"Category": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"personId": true,
+										"name": true,
+										"description": true,
+										"assets": true
+									},
+									"update": {
+										"personId": true,
+										"name": true,
+										"description": true,
+										"assets": true
+									},
+									"create": {
+										"personId": true,
+										"name": true,
+										"description": true,
+										"assets": true
+									}
+								}
+							},
+							"Location": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"name": true,
+										"address": true,
+										"assets": true
+									},
+									"update": {
+										"name": true,
+										"address": true,
+										"assets": true
+									},
+									"create": {
+										"name": true,
+										"address": true,
+										"assets": true
+									}
+								}
+							},
+							"MaintenanceTask": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"title": true,
+										"description": true,
+										"dueDate": true,
+										"priority": true,
+										"assignedTechnician": true,
+										"asset": true,
+										"status": true
+									},
+									"update": {
+										"title": true,
+										"description": true,
+										"dueDate": true,
+										"priority": true,
+										"assignedTechnician": true,
+										"asset": true,
+										"status": true
+									},
+									"create": {
+										"title": true,
+										"description": true,
+										"dueDate": true,
+										"priority": true,
+										"assignedTechnician": true,
+										"asset": true,
+										"status": true
+									}
+								}
+							}
+						},
+						"s3": {
+							"**": {
+								"upload": true,
+								"read": true
+							}
+						}
+					}
+				},
+				{
+					"op": "add",
+					"path": "/roles/maintenanceTechnician",
+					"value": {
+						"variables": {
+							"personId": {
+								"type": "predefined",
+								"value": "personID"
+							}
+						},
+						"stages": "*",
+						"entities": {
+							"User": {
+								"predicates": {
+									"predicateUsermaintenanceTechnician ": {
+										"personId": "personId"
+									}
+								},
+								"operations": {
+									"read": {
+										"personId": "predicateUsermaintenanceTechnician ",
+										"name": "predicateUsermaintenanceTechnician ",
+										"email": "predicateUsermaintenanceTechnician ",
+										"role": "predicateUsermaintenanceTechnician ",
+										"assignedTasks": "predicateUsermaintenanceTechnician "
+									}
+								}
+							},
+							"MaintenanceTask": {
+								"predicates": {
+									"predicateMaintenanceTaskmaintenanceTechnician ": {
+										"assignedTechnician": {
+											"personId": "personId"
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"title": "predicateMaintenanceTaskmaintenanceTechnician ",
+										"description": "predicateMaintenanceTaskmaintenanceTechnician ",
+										"dueDate": "predicateMaintenanceTaskmaintenanceTechnician ",
+										"priority": "predicateMaintenanceTaskmaintenanceTechnician ",
+										"assignedTechnician": "predicateMaintenanceTaskmaintenanceTechnician ",
+										"asset": "predicateMaintenanceTaskmaintenanceTechnician ",
+										"status": "predicateMaintenanceTaskmaintenanceTechnician "
+									},
+									"update": {}
+								}
+							}
+						},
+						"s3": {
+							"**": {
+								"upload": true,
+								"read": true
+							}
+						}
+					}
+				}
+			]
+		}
+	]
+}

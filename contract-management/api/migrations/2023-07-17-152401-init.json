@@ -1,0 +1,983 @@
+{
+	"formatVersion": 4,
+	"modifications": [
+		{
+			"modification": "createEnum",
+			"enumName": "UserRole",
+			"values": [
+				"client",
+				"contractManager"
+			]
+		},
+		{
+			"modification": "createEnum",
+			"enumName": "PaymentStatus",
+			"values": [
+				"pending",
+				"paid",
+				"overdue"
+			]
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "User",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "user",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Contract",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "contract",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Milestone",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "milestone",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Payment",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "payment",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Document",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "document",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "File",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "file",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "personId",
+				"columnName": "person_id",
+				"type": "Uuid",
+				"nullable": true,
+				"columnType": "uuid"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "email",
+				"columnName": "email",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "phone",
+				"columnName": "phone",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "company",
+				"columnName": "company",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "address",
+				"columnName": "address",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "roles",
+				"columnName": "roles",
+				"type": "Enum",
+				"nullable": true,
+				"columnType": "UserRole"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Contract",
+			"field": {
+				"name": "title",
+				"columnName": "title",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Contract",
+			"field": {
+				"name": "description",
+				"columnName": "description",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Contract",
+			"field": {
+				"name": "startDate",
+				"columnName": "start_date",
+				"type": "DateTime",
+				"nullable": true,
+				"columnType": "timestamptz"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Contract",
+			"field": {
+				"name": "endDate",
+				"columnName": "end_date",
+				"type": "DateTime",
+				"nullable": true,
+				"columnType": "timestamptz"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Contract",
+			"field": {
+				"name": "totalValue",
+				"columnName": "total_value",
+				"type": "Double",
+				"nullable": true,
+				"columnType": "double precision"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Milestone",
+			"field": {
+				"name": "title",
+				"columnName": "title",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Milestone",
+			"field": {
+				"name": "description",
+				"columnName": "description",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Milestone",
+			"field": {
+				"name": "dueDate",
+				"columnName": "due_date",
+				"type": "DateTime",
+				"nullable": true,
+				"columnType": "timestamptz"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Milestone",
+			"field": {
+				"name": "completed",
+				"columnName": "completed",
+				"type": "Bool",
+				"nullable": true,
+				"columnType": "boolean"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Payment",
+			"field": {
+				"name": "amount",
+				"columnName": "amount",
+				"type": "Double",
+				"nullable": true,
+				"columnType": "double precision"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Payment",
+			"field": {
+				"name": "date",
+				"columnName": "date",
+				"type": "DateTime",
+				"nullable": true,
+				"columnType": "timestamptz"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Payment",
+			"field": {
+				"name": "paymentMethod",
+				"columnName": "payment_method",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Payment",
+			"field": {
+				"name": "status",
+				"columnName": "status",
+				"type": "Enum",
+				"nullable": true,
+				"columnType": "PaymentStatus"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Document",
+			"field": {
+				"name": "title",
+				"columnName": "title",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Document",
+			"field": {
+				"name": "description",
+				"columnName": "description",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "File",
+			"field": {
+				"name": "url",
+				"columnName": "url",
+				"type": "String",
+				"nullable": false,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "File",
+			"field": {
+				"name": "size",
+				"columnName": "size",
+				"type": "Integer",
+				"nullable": true,
+				"columnType": "integer"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "File",
+			"field": {
+				"name": "type",
+				"columnName": "type",
+				"type": "String",
+				"nullable": true,
+				"columnType": "integer"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "File",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"type": "String",
+				"nullable": true,
+				"columnType": "integer"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "File",
+			"field": {
+				"name": "createdAt",
+				"columnName": "created_at",
+				"type": "DateTime",
+				"nullable": false,
+				"columnType": "timestamptz",
+				"default": "now"
+			},
+			"fillValue": "now"
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Contract",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "client",
+				"target": "User",
+				"inversedBy": "contracts",
+				"joiningColumn": {
+					"columnName": "client_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "contracts",
+				"target": "Contract",
+				"ownedBy": "client"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Milestone",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "contract",
+				"target": "Contract",
+				"inversedBy": "milestones",
+				"joiningColumn": {
+					"columnName": "contract_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "milestones",
+				"target": "Milestone",
+				"ownedBy": "contract"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Milestone",
+			"owningSide": {
+				"type": "OneHasOne",
+				"name": "payment",
+				"target": "Payment",
+				"inversedBy": "milestone",
+				"joiningColumn": {
+					"columnName": "payment_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasOne",
+				"name": "milestone",
+				"target": "Milestone",
+				"ownedBy": "payment",
+				"nullable": true
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Payment",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "client",
+				"target": "User",
+				"inversedBy": "payments",
+				"joiningColumn": {
+					"columnName": "client_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "payments",
+				"target": "Payment",
+				"ownedBy": "client"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Payment",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "contract",
+				"target": "Contract",
+				"inversedBy": "payments",
+				"joiningColumn": {
+					"columnName": "contract_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "payments",
+				"target": "Payment",
+				"ownedBy": "contract"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Document",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "file",
+				"target": "File",
+				"inversedBy": "documentFile",
+				"nullable": true,
+				"joiningColumn": {
+					"columnName": "file_id",
+					"onDelete": "set null"
+				}
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "documentFile",
+				"target": "Document",
+				"ownedBy": "file"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Document",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "contract",
+				"target": "Contract",
+				"inversedBy": "documents",
+				"joiningColumn": {
+					"columnName": "contract_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "documents",
+				"target": "Document",
+				"ownedBy": "contract"
+			}
+		},
+		{
+			"modification": "createUniqueConstraint",
+			"entityName": "User",
+			"unique": {
+				"fields": [
+					"personId",
+					"email"
+				],
+				"name": "unique_User_personId_email"
+			}
+		},
+		{
+			"modification": "patchAclSchema",
+			"patch": [
+				{
+					"op": "add",
+					"path": "/roles/contractManager",
+					"value": {
+						"variables": {
+							"personId": {
+								"type": "predefined",
+								"value": "personID"
+							}
+						},
+						"stages": "*",
+						"entities": {
+							"User": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"personId": true,
+										"name": true,
+										"email": true,
+										"phone": true,
+										"company": true,
+										"address": true,
+										"contracts": true,
+										"payments": true,
+										"roles": true
+									},
+									"update": {
+										"personId": true,
+										"name": true,
+										"email": true,
+										"phone": true,
+										"company": true,
+										"address": true,
+										"contracts": true,
+										"payments": true,
+										"roles": true
+									},
+									"create": {
+										"personId": true,
+										"name": true,
+										"email": true,
+										"phone": true,
+										"company": true,
+										"address": true,
+										"contracts": true,
+										"payments": true,
+										"roles": true
+									}
+								}
+							},
+							"Contract": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"title": true,
+										"description": true,
+										"startDate": true,
+										"endDate": true,
+										"client": true,
+										"milestones": true,
+										"totalValue": true,
+										"documents": true,
+										"payments": true
+									},
+									"update": {
+										"title": true,
+										"description": true,
+										"startDate": true,
+										"endDate": true,
+										"client": true,
+										"milestones": true,
+										"totalValue": true,
+										"documents": true,
+										"payments": true
+									},
+									"create": {
+										"title": true,
+										"description": true,
+										"startDate": true,
+										"endDate": true,
+										"client": true,
+										"milestones": true,
+										"totalValue": true,
+										"documents": true,
+										"payments": true
+									},
+									"delete": true
+								}
+							},
+							"Milestone": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"title": true,
+										"description": true,
+										"dueDate": true,
+										"completed": true,
+										"contract": true,
+										"payment": true
+									},
+									"update": {
+										"title": true,
+										"description": true,
+										"dueDate": true,
+										"completed": true,
+										"contract": true,
+										"payment": true
+									},
+									"create": {
+										"title": true,
+										"description": true,
+										"dueDate": true,
+										"completed": true,
+										"contract": true,
+										"payment": true
+									}
+								}
+							},
+							"Payment": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"client": true,
+										"contract": true,
+										"milestone": true,
+										"amount": true,
+										"date": true,
+										"paymentMethod": true,
+										"status": true
+									},
+									"update": {
+										"client": true,
+										"contract": true,
+										"milestone": true,
+										"amount": true,
+										"date": true,
+										"paymentMethod": true,
+										"status": true
+									},
+									"create": {
+										"client": true,
+										"contract": true,
+										"milestone": true,
+										"amount": true,
+										"date": true,
+										"paymentMethod": true,
+										"status": true
+									}
+								}
+							},
+							"Document": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"title": true,
+										"description": true,
+										"file": true,
+										"contract": true
+									},
+									"update": {
+										"title": true,
+										"description": true,
+										"file": true,
+										"contract": true
+									},
+									"create": {
+										"title": true,
+										"description": true,
+										"file": true,
+										"contract": true
+									}
+								}
+							},
+							"File": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"url": true,
+										"size": true,
+										"type": true,
+										"name": true,
+										"createdAt": true,
+										"documentFile": true
+									},
+									"edit": {
+										"url": true,
+										"size": true,
+										"type": true,
+										"name": true,
+										"createdAt": true,
+										"documentFile": true
+									},
+									"create": {
+										"url": true,
+										"size": true,
+										"type": true,
+										"name": true,
+										"createdAt": true,
+										"documentFile": true
+									}
+								}
+							}
+						},
+						"s3": {
+							"**": {
+								"upload": true,
+								"read": true
+							}
+						},
+						"tenant": {
+							"invite": true,
+							"manage": {
+								"client": true
+							}
+						}
+					}
+				},
+				{
+					"op": "add",
+					"path": "/roles/client",
+					"value": {
+						"variables": {
+							"personId": {
+								"type": "predefined",
+								"value": "personID"
+							}
+						},
+						"stages": "*",
+						"entities": {
+							"User": {
+								"predicates": {
+									"predicateUserclient ": {
+										"personId": "personId"
+									}
+								},
+								"operations": {
+									"read": {
+										"personId": "predicateUserclient ",
+										"name": "predicateUserclient ",
+										"email": "predicateUserclient ",
+										"phone": "predicateUserclient ",
+										"company": "predicateUserclient ",
+										"address": "predicateUserclient ",
+										"contracts": "predicateUserclient ",
+										"payments": "predicateUserclient ",
+										"roles": "predicateUserclient "
+									},
+									"update": {
+										"personId": "predicateUserclient ",
+										"name": "predicateUserclient ",
+										"email": "predicateUserclient ",
+										"phone": "predicateUserclient ",
+										"company": "predicateUserclient ",
+										"address": "predicateUserclient ",
+										"contracts": "predicateUserclient ",
+										"payments": "predicateUserclient ",
+										"roles": "predicateUserclient "
+									}
+								}
+							},
+							"Milestone": {
+								"predicates": {
+									"predicateMilestoneclient ": {
+										"contract": {
+											"client": {
+												"personId": "personId"
+											}
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"title": "predicateMilestoneclient ",
+										"description": "predicateMilestoneclient ",
+										"dueDate": "predicateMilestoneclient ",
+										"completed": "predicateMilestoneclient ",
+										"contract": "predicateMilestoneclient ",
+										"payment": "predicateMilestoneclient "
+									},
+									"update": {
+										"title": "predicateMilestoneclient ",
+										"description": "predicateMilestoneclient ",
+										"dueDate": "predicateMilestoneclient ",
+										"completed": "predicateMilestoneclient ",
+										"contract": "predicateMilestoneclient ",
+										"payment": "predicateMilestoneclient "
+									}
+								}
+							},
+							"Payment": {
+								"predicates": {
+									"predicatePaymentclient ": {
+										"client": {
+											"personId": "personId"
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"client": "predicatePaymentclient ",
+										"contract": "predicatePaymentclient ",
+										"milestone": "predicatePaymentclient ",
+										"amount": "predicatePaymentclient ",
+										"date": "predicatePaymentclient ",
+										"paymentMethod": "predicatePaymentclient ",
+										"status": "predicatePaymentclient "
+									},
+									"update": {
+										"client": "predicatePaymentclient ",
+										"contract": "predicatePaymentclient ",
+										"milestone": "predicatePaymentclient ",
+										"amount": "predicatePaymentclient ",
+										"date": "predicatePaymentclient ",
+										"paymentMethod": "predicatePaymentclient ",
+										"status": "predicatePaymentclient "
+									}
+								}
+							},
+							"Document": {
+								"predicates": {
+									"predicateDocumentclient ": {
+										"contract": {
+											"client": {
+												"personId": "personId"
+											}
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"title": "predicateDocumentclient ",
+										"description": "predicateDocumentclient ",
+										"file": "predicateDocumentclient ",
+										"contract": "predicateDocumentclient "
+									},
+									"update": {}
+								}
+							},
+							"File": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"url": true,
+										"size": true,
+										"type": true,
+										"name": true,
+										"createdAt": true,
+										"documentFile": true
+									}
+								}
+							}
+						},
+						"s3": {
+							"**": {
+								"upload": true,
+								"read": true
+							}
+						}
+					}
+				}
+			]
+		}
+	]
+}

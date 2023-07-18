@@ -1,0 +1,1078 @@
+{
+	"formatVersion": 4,
+	"modifications": [
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Policy",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "policy",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Procedure",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "procedure",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Content",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "content",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "ContentParts",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "content_parts",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "User",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "user",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "TrainingProgram",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "training_program",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Audit",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "audit",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Incident",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "incident",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Policy",
+			"field": {
+				"name": "title",
+				"columnName": "title",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Policy",
+			"field": {
+				"name": "description",
+				"columnName": "description",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Policy",
+			"field": {
+				"name": "effectiveDate",
+				"columnName": "effective_date",
+				"type": "Date",
+				"nullable": true,
+				"columnType": "date"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Policy",
+			"field": {
+				"name": "reviewDate",
+				"columnName": "review_date",
+				"type": "Date",
+				"nullable": true,
+				"columnType": "date"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Procedure",
+			"field": {
+				"name": "title",
+				"columnName": "title",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Procedure",
+			"field": {
+				"name": "description",
+				"columnName": "description",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "ContentParts",
+			"field": {
+				"name": "order",
+				"columnName": "order",
+				"type": "Integer",
+				"nullable": false,
+				"columnType": "integer"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "ContentParts",
+			"field": {
+				"name": "json",
+				"columnName": "json",
+				"type": "String",
+				"nullable": false,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "personId",
+				"columnName": "person_id",
+				"type": "Uuid",
+				"nullable": true,
+				"columnType": "uuid"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "email",
+				"columnName": "email",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "jobTitle",
+				"columnName": "job_title",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "TrainingProgram",
+			"field": {
+				"name": "title",
+				"columnName": "title",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "TrainingProgram",
+			"field": {
+				"name": "description",
+				"columnName": "description",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "TrainingProgram",
+			"field": {
+				"name": "startDate",
+				"columnName": "start_date",
+				"type": "Date",
+				"nullable": true,
+				"columnType": "date"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "TrainingProgram",
+			"field": {
+				"name": "endDate",
+				"columnName": "end_date",
+				"type": "Date",
+				"nullable": true,
+				"columnType": "date"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "TrainingProgram",
+			"field": {
+				"name": "completionStatus",
+				"columnName": "completion_status",
+				"type": "Bool",
+				"nullable": true,
+				"columnType": "boolean"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Audit",
+			"field": {
+				"name": "title",
+				"columnName": "title",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Audit",
+			"field": {
+				"name": "description",
+				"columnName": "description",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Audit",
+			"field": {
+				"name": "date",
+				"columnName": "date",
+				"type": "Date",
+				"nullable": true,
+				"columnType": "date"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Incident",
+			"field": {
+				"name": "title",
+				"columnName": "title",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Incident",
+			"field": {
+				"name": "description",
+				"columnName": "description",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Incident",
+			"field": {
+				"name": "date",
+				"columnName": "date",
+				"type": "Date",
+				"nullable": true,
+				"columnType": "date"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Incident",
+			"field": {
+				"name": "relatedPolicyOrProcedure",
+				"columnName": "related_policy_or_procedure",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Incident",
+			"field": {
+				"name": "resolutionStatus",
+				"columnName": "resolution_status",
+				"type": "Bool",
+				"nullable": true,
+				"columnType": "boolean"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Procedure",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "policy",
+				"target": "Policy",
+				"inversedBy": "procedures",
+				"joiningColumn": {
+					"columnName": "policy_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "procedures",
+				"target": "Procedure",
+				"ownedBy": "policy"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Procedure",
+			"owningSide": {
+				"type": "OneHasOne",
+				"name": "instructions",
+				"target": "Content",
+				"inversedBy": "procedureInstructions",
+				"nullable": true,
+				"orphanRemoval": true,
+				"joiningColumn": {
+					"columnName": "instructions_id",
+					"onDelete": "cascade"
+				}
+			},
+			"inverseSide": {
+				"type": "OneHasOne",
+				"name": "procedureInstructions",
+				"target": "Procedure",
+				"ownedBy": "instructions",
+				"nullable": false
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Procedure",
+			"owningSide": {
+				"type": "ManyHasMany",
+				"name": "responsibleEmployees",
+				"target": "User",
+				"inversedBy": "assignedProcedures",
+				"joiningTable": {
+					"tableName": "procedure_responsible_employees",
+					"joiningColumn": {
+						"columnName": "procedure_id",
+						"onDelete": "cascade"
+					},
+					"inverseJoiningColumn": {
+						"columnName": "user_id",
+						"onDelete": "cascade"
+					},
+					"eventLog": {
+						"enabled": true
+					}
+				}
+			},
+			"inverseSide": {
+				"type": "ManyHasMany",
+				"name": "assignedProcedures",
+				"target": "Procedure",
+				"ownedBy": "responsibleEmployees"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "ContentParts",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "content",
+				"target": "Content",
+				"inversedBy": "parts",
+				"joiningColumn": {
+					"columnName": "content_id",
+					"onDelete": "cascade"
+				},
+				"nullable": false
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "parts",
+				"target": "ContentParts",
+				"ownedBy": "content",
+				"orderBy": [
+					{
+						"path": [
+							"order"
+						],
+						"direction": "asc"
+					}
+				]
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "User",
+			"owningSide": {
+				"type": "ManyHasMany",
+				"name": "trainingPrograms",
+				"target": "TrainingProgram",
+				"inversedBy": "attendees",
+				"joiningTable": {
+					"tableName": "user_training_programs",
+					"joiningColumn": {
+						"columnName": "user_id",
+						"onDelete": "cascade"
+					},
+					"inverseJoiningColumn": {
+						"columnName": "training_program_id",
+						"onDelete": "cascade"
+					},
+					"eventLog": {
+						"enabled": true
+					}
+				}
+			},
+			"inverseSide": {
+				"type": "ManyHasMany",
+				"name": "attendees",
+				"target": "User",
+				"ownedBy": "trainingPrograms"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Audit",
+			"owningSide": {
+				"type": "OneHasOne",
+				"name": "findings",
+				"target": "Content",
+				"inversedBy": "auditFindings",
+				"nullable": true,
+				"orphanRemoval": true,
+				"joiningColumn": {
+					"columnName": "findings_id",
+					"onDelete": "cascade"
+				}
+			},
+			"inverseSide": {
+				"type": "OneHasOne",
+				"name": "auditFindings",
+				"target": "Audit",
+				"ownedBy": "findings",
+				"nullable": false
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Audit",
+			"owningSide": {
+				"type": "OneHasOne",
+				"name": "recommendations",
+				"target": "Content",
+				"inversedBy": "auditRecommendations",
+				"nullable": true,
+				"orphanRemoval": true,
+				"joiningColumn": {
+					"columnName": "recommendations_id",
+					"onDelete": "cascade"
+				}
+			},
+			"inverseSide": {
+				"type": "OneHasOne",
+				"name": "auditRecommendations",
+				"target": "Audit",
+				"ownedBy": "recommendations",
+				"nullable": false
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Audit",
+			"owningSide": {
+				"type": "ManyHasMany",
+				"name": "responsibleEmployees",
+				"target": "User",
+				"inversedBy": "assignedAudits",
+				"joiningTable": {
+					"tableName": "audit_responsible_employees",
+					"joiningColumn": {
+						"columnName": "audit_id",
+						"onDelete": "cascade"
+					},
+					"inverseJoiningColumn": {
+						"columnName": "user_id",
+						"onDelete": "cascade"
+					},
+					"eventLog": {
+						"enabled": true
+					}
+				}
+			},
+			"inverseSide": {
+				"type": "ManyHasMany",
+				"name": "assignedAudits",
+				"target": "Audit",
+				"ownedBy": "responsibleEmployees"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Incident",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "involvedEmployee",
+				"target": "User",
+				"inversedBy": "incidents",
+				"joiningColumn": {
+					"columnName": "involved_employee_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "incidents",
+				"target": "Incident",
+				"ownedBy": "involvedEmployee"
+			}
+		},
+		{
+			"modification": "createUniqueConstraint",
+			"entityName": "User",
+			"unique": {
+				"fields": [
+					"personId",
+					"email"
+				],
+				"name": "unique_User_personId_email"
+			}
+		},
+		{
+			"modification": "patchAclSchema",
+			"patch": [
+				{
+					"op": "add",
+					"path": "/roles/complianceOfficer",
+					"value": {
+						"variables": {
+							"personId": {
+								"type": "predefined",
+								"value": "personID"
+							}
+						},
+						"stages": "*",
+						"entities": {
+							"Policy": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"title": true,
+										"description": true,
+										"effectiveDate": true,
+										"reviewDate": true,
+										"procedures": true
+									},
+									"update": {
+										"title": true,
+										"description": true,
+										"effectiveDate": true,
+										"reviewDate": true,
+										"procedures": true
+									},
+									"create": {
+										"title": true,
+										"description": true,
+										"effectiveDate": true,
+										"reviewDate": true,
+										"procedures": true
+									}
+								}
+							},
+							"Procedure": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"title": true,
+										"description": true,
+										"policy": true,
+										"instructions": true,
+										"responsibleEmployees": true
+									},
+									"update": {
+										"title": true,
+										"description": true,
+										"policy": true,
+										"instructions": true,
+										"responsibleEmployees": true
+									},
+									"create": {
+										"title": true,
+										"description": true,
+										"policy": true,
+										"instructions": true,
+										"responsibleEmployees": true
+									}
+								}
+							},
+							"User": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"personId": true,
+										"name": true,
+										"email": true,
+										"jobTitle": true,
+										"assignedProcedures": true,
+										"trainingPrograms": true,
+										"incidents": true,
+										"assignedAudits": true
+									}
+								}
+							},
+							"TrainingProgram": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"title": true,
+										"description": true,
+										"attendees": true,
+										"startDate": true,
+										"endDate": true,
+										"completionStatus": true
+									},
+									"update": {
+										"title": true,
+										"description": true,
+										"attendees": true,
+										"startDate": true,
+										"endDate": true,
+										"completionStatus": true
+									},
+									"create": {
+										"title": true,
+										"description": true,
+										"attendees": true,
+										"startDate": true,
+										"endDate": true,
+										"completionStatus": true
+									}
+								}
+							},
+							"Audit": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"title": true,
+										"description": true,
+										"date": true,
+										"findings": true,
+										"recommendations": true,
+										"responsibleEmployees": true
+									},
+									"update": {
+										"title": true,
+										"description": true,
+										"date": true,
+										"findings": true,
+										"recommendations": true,
+										"responsibleEmployees": true
+									},
+									"create": {
+										"title": true,
+										"description": true,
+										"date": true,
+										"findings": true,
+										"recommendations": true,
+										"responsibleEmployees": true
+									}
+								}
+							},
+							"Incident": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"title": true,
+										"description": true,
+										"date": true,
+										"involvedEmployee": true,
+										"relatedPolicyOrProcedure": true,
+										"resolutionStatus": true
+									},
+									"update": {
+										"title": true,
+										"description": true,
+										"date": true,
+										"involvedEmployee": true,
+										"relatedPolicyOrProcedure": true,
+										"resolutionStatus": true
+									},
+									"create": {
+										"title": true,
+										"description": true,
+										"date": true,
+										"involvedEmployee": true,
+										"relatedPolicyOrProcedure": true,
+										"resolutionStatus": true
+									}
+								}
+							},
+							"Content": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"parts": true,
+										"procedureInstructions": true,
+										"auditFindings": true,
+										"auditRecommendations": true
+									},
+									"edit": {
+										"parts": true,
+										"procedureInstructions": true,
+										"auditFindings": true,
+										"auditRecommendations": true
+									},
+									"create": {
+										"parts": true,
+										"procedureInstructions": true,
+										"auditFindings": true,
+										"auditRecommendations": true
+									},
+									"update": {
+										"parts": true,
+										"procedureInstructions": true,
+										"auditFindings": true,
+										"auditRecommendations": true
+									},
+									"delete": true
+								}
+							},
+							"ContentParts": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"order": true,
+										"content": true,
+										"json": true
+									},
+									"edit": {
+										"order": true,
+										"content": true,
+										"json": true
+									},
+									"create": {
+										"order": true,
+										"content": true,
+										"json": true
+									},
+									"update": {
+										"order": true,
+										"content": true,
+										"json": true
+									},
+									"delete": true
+								}
+							}
+						},
+						"s3": {
+							"**": {
+								"upload": true,
+								"read": true
+							}
+						}
+					}
+				},
+				{
+					"op": "add",
+					"path": "/roles/employee",
+					"value": {
+						"variables": {
+							"personId": {
+								"type": "predefined",
+								"value": "personID"
+							}
+						},
+						"stages": "*",
+						"entities": {
+							"Policy": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"title": true,
+										"description": true,
+										"effectiveDate": true,
+										"reviewDate": true,
+										"procedures": true
+									}
+								}
+							},
+							"Procedure": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"title": true,
+										"description": true,
+										"policy": true,
+										"instructions": true,
+										"responsibleEmployees": true
+									}
+								}
+							},
+							"User": {
+								"predicates": {
+									"predicateUseremployee ": {
+										"personId": "personId"
+									}
+								},
+								"operations": {
+									"read": {
+										"personId": "predicateUseremployee ",
+										"name": "predicateUseremployee ",
+										"email": "predicateUseremployee ",
+										"jobTitle": "predicateUseremployee ",
+										"assignedProcedures": "predicateUseremployee ",
+										"trainingPrograms": "predicateUseremployee ",
+										"incidents": "predicateUseremployee ",
+										"assignedAudits": "predicateUseremployee "
+									}
+								}
+							},
+							"TrainingProgram": {
+								"predicates": {
+									"predicateTrainingProgramemployee ": {
+										"attendees": {
+											"personId": "personId"
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"title": "predicateTrainingProgramemployee ",
+										"description": "predicateTrainingProgramemployee ",
+										"attendees": "predicateTrainingProgramemployee ",
+										"startDate": "predicateTrainingProgramemployee ",
+										"endDate": "predicateTrainingProgramemployee ",
+										"completionStatus": "predicateTrainingProgramemployee "
+									}
+								}
+							},
+							"Audit": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"title": true,
+										"description": true,
+										"date": true,
+										"findings": true,
+										"recommendations": true,
+										"responsibleEmployees": true
+									}
+								}
+							},
+							"Incident": {
+								"predicates": {
+									"predicateIncidentemployee ": {
+										"involvedEmployee": {
+											"personId": "personId"
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"title": "predicateIncidentemployee ",
+										"description": "predicateIncidentemployee ",
+										"date": "predicateIncidentemployee ",
+										"involvedEmployee": "predicateIncidentemployee ",
+										"relatedPolicyOrProcedure": "predicateIncidentemployee ",
+										"resolutionStatus": "predicateIncidentemployee "
+									},
+									"update": {}
+								}
+							},
+							"Content": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"parts": true,
+										"procedureInstructions": true,
+										"auditFindings": true,
+										"auditRecommendations": true
+									}
+								}
+							},
+							"ContentParts": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"order": true,
+										"content": true,
+										"json": true
+									}
+								}
+							}
+						},
+						"s3": {
+							"**": {
+								"upload": true,
+								"read": true
+							}
+						}
+					}
+				}
+			]
+		}
+	]
+}

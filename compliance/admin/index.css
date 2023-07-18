@@ -1,0 +1,60 @@
+@import '@contember/admin/index.css';
+@import '@contember/brand/index.css';
+@import '@contember/layout/index.css';
+
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.box {
+		border-color: theme('colors.stone.100');
+		box-shadow: theme('boxShadow.md');
+	}
+
+	@media (prefers-color-scheme: dark) {
+		.box {
+			border-color: theme('colors.stone.600');
+		}
+	}
+
+	.box-header {
+		border-bottom-width: 1px;
+		border-color: theme('colors.stone.100');
+		padding-bottom: theme('padding.3');
+		margin-bottom: theme('margin.3');
+	}
+
+	@media (prefers-color-scheme: dark) {
+		.box-header {
+			border-color: theme('colors.stone.600');
+		}
+	}
+
+	.box-item {
+		border-bottom-width: 1px;
+		border-color: theme('colors.stone.100');
+		padding-bottom: theme('padding.3');
+	}
+
+	.box-item:last-child {
+		border-bottom-width: 0;
+		padding-bottom: 0;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		.box-item {
+			border-color: theme('colors.stone.600');
+		}
+	}
+
+	.box-item .cui-label {
+		font-size: theme('fontSize.sm');
+		font-weight: theme('fontWeight.normal');
+	}
+
+	.box-item .cui-field-container-body {
+		font-size: theme('fontSize.sm');
+		font-weight: theme('fontWeight.bold');
+	}
+
+}

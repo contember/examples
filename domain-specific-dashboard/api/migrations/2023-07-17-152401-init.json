@@ -1,0 +1,663 @@
+{
+	"formatVersion": 4,
+	"modifications": [
+		{
+			"modification": "createEnum",
+			"enumName": "DealStatus",
+			"values": [
+				"open",
+				"won",
+				"lost"
+			]
+		},
+		{
+			"modification": "createEnum",
+			"enumName": "TaskType",
+			"values": [
+				"call",
+				"meeting",
+				"followUp"
+			]
+		},
+		{
+			"modification": "createEnum",
+			"enumName": "TaskStatus",
+			"values": [
+				"pending",
+				"completed"
+			]
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "User",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "user",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Lead",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "lead",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Deal",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "deal",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Task",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "task",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "personId",
+				"columnName": "person_id",
+				"type": "Uuid",
+				"nullable": true,
+				"columnType": "uuid"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "email",
+				"columnName": "email",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "phoneNumber",
+				"columnName": "phone_number",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Lead",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Lead",
+			"field": {
+				"name": "contactInfo",
+				"columnName": "contact_info",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Lead",
+			"field": {
+				"name": "source",
+				"columnName": "source",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Deal",
+			"field": {
+				"name": "value",
+				"columnName": "value",
+				"type": "Double",
+				"nullable": true,
+				"columnType": "double precision"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Deal",
+			"field": {
+				"name": "status",
+				"columnName": "status",
+				"type": "Enum",
+				"nullable": false,
+				"columnType": "DealStatus"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Deal",
+			"field": {
+				"name": "expectedCloseDate",
+				"columnName": "expected_close_date",
+				"type": "DateTime",
+				"nullable": true,
+				"columnType": "timestamptz"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Task",
+			"field": {
+				"name": "taskType",
+				"columnName": "task_type",
+				"type": "Enum",
+				"nullable": false,
+				"columnType": "TaskType"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Task",
+			"field": {
+				"name": "dueDate",
+				"columnName": "due_date",
+				"type": "DateTime",
+				"nullable": true,
+				"columnType": "timestamptz"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Task",
+			"field": {
+				"name": "status",
+				"columnName": "status",
+				"type": "Enum",
+				"nullable": false,
+				"columnType": "TaskStatus"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Lead",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "assignedTo",
+				"target": "User",
+				"inversedBy": "leads",
+				"joiningColumn": {
+					"columnName": "assigned_to_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "leads",
+				"target": "Lead",
+				"ownedBy": "assignedTo"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Deal",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "lead",
+				"target": "Lead",
+				"inversedBy": "deals",
+				"joiningColumn": {
+					"columnName": "lead_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "deals",
+				"target": "Deal",
+				"ownedBy": "lead"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Task",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "assignedTo",
+				"target": "User",
+				"inversedBy": "tasks",
+				"joiningColumn": {
+					"columnName": "assigned_to_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "tasks",
+				"target": "Task",
+				"ownedBy": "assignedTo"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Task",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "lead",
+				"target": "Lead",
+				"inversedBy": "tasks",
+				"joiningColumn": {
+					"columnName": "lead_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "tasks",
+				"target": "Task",
+				"ownedBy": "lead"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Task",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "deal",
+				"target": "Deal",
+				"inversedBy": "tasks",
+				"joiningColumn": {
+					"columnName": "deal_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "tasks",
+				"target": "Task",
+				"ownedBy": "deal"
+			}
+		},
+		{
+			"modification": "createUniqueConstraint",
+			"entityName": "User",
+			"unique": {
+				"fields": [
+					"personId",
+					"email"
+				],
+				"name": "unique_User_personId_email"
+			}
+		},
+		{
+			"modification": "patchAclSchema",
+			"patch": [
+				{
+					"op": "add",
+					"path": "/roles/salesManager",
+					"value": {
+						"variables": {
+							"personId": {
+								"type": "predefined",
+								"value": "personID"
+							}
+						},
+						"stages": "*",
+						"entities": {
+							"User": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"personId": true,
+										"name": true,
+										"email": true,
+										"phoneNumber": true,
+										"leads": true,
+										"tasks": true
+									},
+									"update": {
+										"personId": true,
+										"name": true,
+										"email": true,
+										"phoneNumber": true,
+										"leads": true,
+										"tasks": true
+									}
+								}
+							},
+							"Lead": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"name": true,
+										"contactInfo": true,
+										"source": true,
+										"assignedTo": true,
+										"deals": true,
+										"tasks": true
+									},
+									"update": {
+										"name": true,
+										"contactInfo": true,
+										"source": true,
+										"assignedTo": true,
+										"deals": true,
+										"tasks": true
+									},
+									"create": {
+										"name": true,
+										"contactInfo": true,
+										"source": true,
+										"assignedTo": true,
+										"deals": true,
+										"tasks": true
+									}
+								}
+							},
+							"Deal": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"value": true,
+										"status": true,
+										"expectedCloseDate": true,
+										"lead": true,
+										"tasks": true
+									},
+									"update": {
+										"value": true,
+										"status": true,
+										"expectedCloseDate": true,
+										"lead": true,
+										"tasks": true
+									},
+									"create": {
+										"value": true,
+										"status": true,
+										"expectedCloseDate": true,
+										"lead": true,
+										"tasks": true
+									}
+								}
+							},
+							"Task": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"taskType": true,
+										"dueDate": true,
+										"status": true,
+										"assignedTo": true,
+										"lead": true,
+										"deal": true
+									},
+									"update": {
+										"taskType": true,
+										"dueDate": true,
+										"status": true,
+										"assignedTo": true,
+										"lead": true,
+										"deal": true
+									},
+									"create": {
+										"taskType": true,
+										"dueDate": true,
+										"status": true,
+										"assignedTo": true,
+										"lead": true,
+										"deal": true
+									}
+								}
+							}
+						},
+						"s3": {
+							"**": {
+								"upload": true,
+								"read": true
+							}
+						}
+					}
+				},
+				{
+					"op": "add",
+					"path": "/roles/salesRepresentative",
+					"value": {
+						"variables": {
+							"personId": {
+								"type": "predefined",
+								"value": "personID"
+							}
+						},
+						"stages": "*",
+						"entities": {
+							"User": {
+								"predicates": {
+									"predicateUsersalesRepresentative ": {
+										"personId": "personId"
+									}
+								},
+								"operations": {
+									"read": {
+										"personId": "predicateUsersalesRepresentative ",
+										"name": "predicateUsersalesRepresentative ",
+										"email": "predicateUsersalesRepresentative ",
+										"phoneNumber": "predicateUsersalesRepresentative ",
+										"leads": "predicateUsersalesRepresentative ",
+										"tasks": "predicateUsersalesRepresentative "
+									},
+									"update": {
+										"personId": "predicateUsersalesRepresentative ",
+										"name": "predicateUsersalesRepresentative ",
+										"email": "predicateUsersalesRepresentative ",
+										"phoneNumber": "predicateUsersalesRepresentative ",
+										"leads": "predicateUsersalesRepresentative ",
+										"tasks": "predicateUsersalesRepresentative "
+									}
+								}
+							},
+							"Lead": {
+								"predicates": {
+									"predicateLeadsalesRepresentative ": {
+										"assignedTo": {
+											"personId": "personId"
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"name": "predicateLeadsalesRepresentative ",
+										"contactInfo": "predicateLeadsalesRepresentative ",
+										"source": "predicateLeadsalesRepresentative ",
+										"assignedTo": "predicateLeadsalesRepresentative ",
+										"deals": "predicateLeadsalesRepresentative ",
+										"tasks": "predicateLeadsalesRepresentative "
+									},
+									"update": {
+										"name": "predicateLeadsalesRepresentative ",
+										"contactInfo": "predicateLeadsalesRepresentative ",
+										"source": "predicateLeadsalesRepresentative ",
+										"assignedTo": "predicateLeadsalesRepresentative ",
+										"deals": "predicateLeadsalesRepresentative ",
+										"tasks": "predicateLeadsalesRepresentative "
+									},
+									"create": {
+										"name": "predicateLeadsalesRepresentative ",
+										"contactInfo": "predicateLeadsalesRepresentative ",
+										"source": "predicateLeadsalesRepresentative ",
+										"assignedTo": "predicateLeadsalesRepresentative ",
+										"deals": "predicateLeadsalesRepresentative ",
+										"tasks": "predicateLeadsalesRepresentative "
+									}
+								}
+							},
+							"Deal": {
+								"predicates": {
+									"predicateDealsalesRepresentative ": {
+										"lead": {
+											"assignedTo": {
+												"personId": "personId"
+											}
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"value": "predicateDealsalesRepresentative ",
+										"status": "predicateDealsalesRepresentative ",
+										"expectedCloseDate": "predicateDealsalesRepresentative ",
+										"lead": "predicateDealsalesRepresentative ",
+										"tasks": "predicateDealsalesRepresentative "
+									},
+									"update": {
+										"value": "predicateDealsalesRepresentative ",
+										"status": "predicateDealsalesRepresentative ",
+										"expectedCloseDate": "predicateDealsalesRepresentative ",
+										"lead": "predicateDealsalesRepresentative ",
+										"tasks": "predicateDealsalesRepresentative "
+									},
+									"create": {
+										"value": "predicateDealsalesRepresentative ",
+										"status": "predicateDealsalesRepresentative ",
+										"expectedCloseDate": "predicateDealsalesRepresentative ",
+										"lead": "predicateDealsalesRepresentative ",
+										"tasks": "predicateDealsalesRepresentative "
+									}
+								}
+							},
+							"Task": {
+								"predicates": {
+									"predicateTasksalesRepresentative ": {
+										"assignedTo": {
+											"personId": "personId"
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"taskType": "predicateTasksalesRepresentative ",
+										"dueDate": "predicateTasksalesRepresentative ",
+										"status": "predicateTasksalesRepresentative ",
+										"assignedTo": "predicateTasksalesRepresentative ",
+										"lead": "predicateTasksalesRepresentative ",
+										"deal": "predicateTasksalesRepresentative "
+									},
+									"update": {
+										"taskType": "predicateTasksalesRepresentative ",
+										"dueDate": "predicateTasksalesRepresentative ",
+										"status": "predicateTasksalesRepresentative ",
+										"assignedTo": "predicateTasksalesRepresentative ",
+										"lead": "predicateTasksalesRepresentative ",
+										"deal": "predicateTasksalesRepresentative "
+									},
+									"create": {
+										"taskType": "predicateTasksalesRepresentative ",
+										"dueDate": "predicateTasksalesRepresentative ",
+										"status": "predicateTasksalesRepresentative ",
+										"assignedTo": "predicateTasksalesRepresentative ",
+										"lead": "predicateTasksalesRepresentative ",
+										"deal": "predicateTasksalesRepresentative "
+									}
+								}
+							}
+						},
+						"s3": {
+							"**": {
+								"upload": true,
+								"read": true
+							}
+						}
+					}
+				}
+			]
+		}
+	]
+}

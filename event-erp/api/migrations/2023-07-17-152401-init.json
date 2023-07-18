@@ -1,0 +1,970 @@
+{
+	"formatVersion": 4,
+	"modifications": [
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "User",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "user",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Event",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "event",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Speaker",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "speaker",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Image",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "image",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Sponsor",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "sponsor",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Venue",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "venue",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "TicketType",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "ticket_type",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Ticket",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "ticket",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "personId",
+				"columnName": "person_id",
+				"type": "Uuid",
+				"nullable": true,
+				"columnType": "uuid"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "email",
+				"columnName": "email",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Event",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Event",
+			"field": {
+				"name": "description",
+				"columnName": "description",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Event",
+			"field": {
+				"name": "startDate",
+				"columnName": "start_date",
+				"type": "DateTime",
+				"nullable": true,
+				"columnType": "timestamptz"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Event",
+			"field": {
+				"name": "endDate",
+				"columnName": "end_date",
+				"type": "DateTime",
+				"nullable": true,
+				"columnType": "timestamptz"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Speaker",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Speaker",
+			"field": {
+				"name": "bio",
+				"columnName": "bio",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Image",
+			"field": {
+				"name": "url",
+				"columnName": "url",
+				"type": "String",
+				"nullable": false,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Image",
+			"field": {
+				"name": "width",
+				"columnName": "width",
+				"type": "Integer",
+				"nullable": true,
+				"columnType": "integer"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Image",
+			"field": {
+				"name": "height",
+				"columnName": "height",
+				"type": "Integer",
+				"nullable": true,
+				"columnType": "integer"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Image",
+			"field": {
+				"name": "size",
+				"columnName": "size",
+				"type": "Integer",
+				"nullable": true,
+				"columnType": "integer"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Image",
+			"field": {
+				"name": "type",
+				"columnName": "type",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Image",
+			"field": {
+				"name": "alt",
+				"columnName": "alt",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Image",
+			"field": {
+				"name": "createdAt",
+				"columnName": "created_at",
+				"type": "DateTime",
+				"nullable": false,
+				"columnType": "timestamptz",
+				"default": "now"
+			},
+			"fillValue": "now"
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Sponsor",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Sponsor",
+			"field": {
+				"name": "description",
+				"columnName": "description",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Venue",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Venue",
+			"field": {
+				"name": "address",
+				"columnName": "address",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Venue",
+			"field": {
+				"name": "capacity",
+				"columnName": "capacity",
+				"type": "Integer",
+				"nullable": true,
+				"columnType": "integer"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "TicketType",
+			"field": {
+				"name": "type",
+				"columnName": "type",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "TicketType",
+			"field": {
+				"name": "price",
+				"columnName": "price",
+				"type": "Double",
+				"nullable": true,
+				"columnType": "double precision"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "TicketType",
+			"field": {
+				"name": "availableTickets",
+				"columnName": "available_tickets",
+				"type": "Integer",
+				"nullable": true,
+				"columnType": "integer"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Event",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "venue",
+				"target": "Venue",
+				"inversedBy": "events",
+				"joiningColumn": {
+					"columnName": "venue_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "events",
+				"target": "Event",
+				"ownedBy": "venue"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Event",
+			"owningSide": {
+				"type": "ManyHasMany",
+				"name": "speakers",
+				"target": "Speaker",
+				"inversedBy": "events",
+				"joiningTable": {
+					"tableName": "event_speakers",
+					"joiningColumn": {
+						"columnName": "event_id",
+						"onDelete": "cascade"
+					},
+					"inverseJoiningColumn": {
+						"columnName": "speaker_id",
+						"onDelete": "cascade"
+					},
+					"eventLog": {
+						"enabled": true
+					}
+				}
+			},
+			"inverseSide": {
+				"type": "ManyHasMany",
+				"name": "events",
+				"target": "Event",
+				"ownedBy": "speakers"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Event",
+			"owningSide": {
+				"type": "ManyHasMany",
+				"name": "sponsors",
+				"target": "Sponsor",
+				"inversedBy": "events",
+				"joiningTable": {
+					"tableName": "event_sponsors",
+					"joiningColumn": {
+						"columnName": "event_id",
+						"onDelete": "cascade"
+					},
+					"inverseJoiningColumn": {
+						"columnName": "sponsor_id",
+						"onDelete": "cascade"
+					},
+					"eventLog": {
+						"enabled": true
+					}
+				}
+			},
+			"inverseSide": {
+				"type": "ManyHasMany",
+				"name": "events",
+				"target": "Event",
+				"ownedBy": "sponsors"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Event",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "organizer",
+				"target": "User",
+				"inversedBy": "organizedEvents",
+				"joiningColumn": {
+					"columnName": "organizer_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "organizedEvents",
+				"target": "Event",
+				"ownedBy": "organizer"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Speaker",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "photo",
+				"target": "Image",
+				"inversedBy": "speakerPhoto",
+				"nullable": true,
+				"joiningColumn": {
+					"columnName": "photo_id",
+					"onDelete": "set null"
+				}
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "speakerPhoto",
+				"target": "Speaker",
+				"ownedBy": "photo"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Sponsor",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "logo",
+				"target": "Image",
+				"inversedBy": "sponsorLogo",
+				"nullable": true,
+				"joiningColumn": {
+					"columnName": "logo_id",
+					"onDelete": "set null"
+				}
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "sponsorLogo",
+				"target": "Sponsor",
+				"ownedBy": "logo"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "TicketType",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "event",
+				"target": "Event",
+				"inversedBy": "ticketTypes",
+				"joiningColumn": {
+					"columnName": "event_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "ticketTypes",
+				"target": "TicketType",
+				"ownedBy": "event"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Ticket",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "ticketType",
+				"target": "TicketType",
+				"inversedBy": "tickets",
+				"joiningColumn": {
+					"columnName": "ticket_type_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "tickets",
+				"target": "Ticket",
+				"ownedBy": "ticketType"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Ticket",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "attendee",
+				"target": "User",
+				"inversedBy": "tickets",
+				"joiningColumn": {
+					"columnName": "attendee_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "tickets",
+				"target": "Ticket",
+				"ownedBy": "attendee"
+			}
+		},
+		{
+			"modification": "createUniqueConstraint",
+			"entityName": "User",
+			"unique": {
+				"fields": [
+					"personId",
+					"email"
+				],
+				"name": "unique_User_personId_email"
+			}
+		},
+		{
+			"modification": "patchAclSchema",
+			"patch": [
+				{
+					"op": "add",
+					"path": "/roles/eventOrganizer",
+					"value": {
+						"variables": {
+							"personId": {
+								"type": "predefined",
+								"value": "personID"
+							}
+						},
+						"stages": "*",
+						"entities": {
+							"User": {
+								"predicates": {
+									"predicateUsereventOrganizer ": {
+										"personId": "personId"
+									}
+								},
+								"operations": {
+									"read": {
+										"personId": "predicateUsereventOrganizer ",
+										"name": "predicateUsereventOrganizer ",
+										"email": "predicateUsereventOrganizer ",
+										"tickets": "predicateUsereventOrganizer ",
+										"organizedEvents": "predicateUsereventOrganizer "
+									},
+									"update": {
+										"personId": "predicateUsereventOrganizer ",
+										"name": "predicateUsereventOrganizer ",
+										"email": "predicateUsereventOrganizer ",
+										"tickets": "predicateUsereventOrganizer ",
+										"organizedEvents": "predicateUsereventOrganizer "
+									}
+								}
+							},
+							"Event": {
+								"predicates": {
+									"predicateEventeventOrganizer ": {
+										"organizer": {
+											"personId": "personId"
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"name": "predicateEventeventOrganizer ",
+										"description": "predicateEventeventOrganizer ",
+										"startDate": "predicateEventeventOrganizer ",
+										"endDate": "predicateEventeventOrganizer ",
+										"venue": "predicateEventeventOrganizer ",
+										"speakers": "predicateEventeventOrganizer ",
+										"sponsors": "predicateEventeventOrganizer ",
+										"ticketTypes": "predicateEventeventOrganizer ",
+										"organizer": "predicateEventeventOrganizer "
+									},
+									"update": {
+										"name": "predicateEventeventOrganizer ",
+										"description": "predicateEventeventOrganizer ",
+										"startDate": "predicateEventeventOrganizer ",
+										"endDate": "predicateEventeventOrganizer ",
+										"venue": "predicateEventeventOrganizer ",
+										"speakers": "predicateEventeventOrganizer ",
+										"sponsors": "predicateEventeventOrganizer ",
+										"ticketTypes": "predicateEventeventOrganizer ",
+										"organizer": "predicateEventeventOrganizer "
+									},
+									"create": {
+										"name": "predicateEventeventOrganizer ",
+										"description": "predicateEventeventOrganizer ",
+										"startDate": "predicateEventeventOrganizer ",
+										"endDate": "predicateEventeventOrganizer ",
+										"venue": "predicateEventeventOrganizer ",
+										"speakers": "predicateEventeventOrganizer ",
+										"sponsors": "predicateEventeventOrganizer ",
+										"ticketTypes": "predicateEventeventOrganizer ",
+										"organizer": "predicateEventeventOrganizer "
+									}
+								}
+							},
+							"Speaker": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"name": true,
+										"bio": true,
+										"photo": true,
+										"events": true
+									},
+									"update": {
+										"name": true,
+										"bio": true,
+										"photo": true,
+										"events": true
+									},
+									"create": {
+										"name": true,
+										"bio": true,
+										"photo": true,
+										"events": true
+									}
+								}
+							},
+							"Sponsor": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"name": true,
+										"logo": true,
+										"description": true,
+										"events": true
+									},
+									"update": {
+										"name": true,
+										"logo": true,
+										"description": true,
+										"events": true
+									},
+									"create": {
+										"name": true,
+										"logo": true,
+										"description": true,
+										"events": true
+									}
+								}
+							},
+							"Venue": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"name": true,
+										"address": true,
+										"capacity": true,
+										"events": true
+									},
+									"update": {
+										"name": true,
+										"address": true,
+										"capacity": true,
+										"events": true
+									},
+									"create": {
+										"name": true,
+										"address": true,
+										"capacity": true,
+										"events": true
+									}
+								}
+							},
+							"TicketType": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"type": true,
+										"price": true,
+										"availableTickets": true,
+										"event": true,
+										"tickets": true
+									},
+									"update": {
+										"type": true,
+										"price": true,
+										"availableTickets": true,
+										"event": true,
+										"tickets": true
+									},
+									"create": {
+										"type": true,
+										"price": true,
+										"availableTickets": true,
+										"event": true,
+										"tickets": true
+									}
+								}
+							},
+							"Image": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"url": true,
+										"width": true,
+										"height": true,
+										"size": true,
+										"type": true,
+										"alt": true,
+										"createdAt": true,
+										"speakerPhoto": true,
+										"sponsorLogo": true
+									},
+									"edit": {
+										"url": true,
+										"width": true,
+										"height": true,
+										"size": true,
+										"type": true,
+										"alt": true,
+										"createdAt": true,
+										"speakerPhoto": true,
+										"sponsorLogo": true
+									},
+									"create": {
+										"url": true,
+										"width": true,
+										"height": true,
+										"size": true,
+										"type": true,
+										"alt": true,
+										"createdAt": true,
+										"speakerPhoto": true,
+										"sponsorLogo": true
+									}
+								}
+							}
+						},
+						"s3": {
+							"**": {
+								"upload": true,
+								"read": true
+							}
+						}
+					}
+				},
+				{
+					"op": "add",
+					"path": "/roles/attendee",
+					"value": {
+						"variables": {
+							"personId": {
+								"type": "predefined",
+								"value": "personID"
+							}
+						},
+						"stages": "*",
+						"entities": {
+							"User": {
+								"predicates": {
+									"predicateUserattendee ": {
+										"personId": "personId"
+									}
+								},
+								"operations": {
+									"read": {
+										"personId": "predicateUserattendee ",
+										"name": "predicateUserattendee ",
+										"email": "predicateUserattendee ",
+										"tickets": "predicateUserattendee ",
+										"organizedEvents": "predicateUserattendee "
+									},
+									"update": {
+										"personId": "predicateUserattendee ",
+										"name": "predicateUserattendee ",
+										"email": "predicateUserattendee ",
+										"tickets": "predicateUserattendee ",
+										"organizedEvents": "predicateUserattendee "
+									}
+								}
+							},
+							"Ticket": {
+								"predicates": {
+									"predicateTicketattendee ": {
+										"attendee": {
+											"personId": "personId"
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"ticketType": "predicateTicketattendee ",
+										"attendee": "predicateTicketattendee "
+									},
+									"update": {
+										"ticketType": "predicateTicketattendee ",
+										"attendee": "predicateTicketattendee "
+									},
+									"create": {
+										"ticketType": "predicateTicketattendee ",
+										"attendee": "predicateTicketattendee "
+									}
+								}
+							},
+							"Image": {
+								"predicates": {},
+								"operations": {}
+							}
+						},
+						"s3": {
+							"**": {
+								"upload": true,
+								"read": true
+							}
+						}
+					}
+				}
+			]
+		}
+	]
+}

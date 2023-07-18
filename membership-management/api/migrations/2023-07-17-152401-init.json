@@ -1,0 +1,706 @@
+{
+	"formatVersion": 4,
+	"modifications": [
+		{
+			"modification": "createEnum",
+			"enumName": "Duration",
+			"values": [
+				"monthly",
+				"yearly"
+			]
+		},
+		{
+			"modification": "createEnum",
+			"enumName": "PaymentMethod",
+			"values": [
+				"creditCard",
+				"bankTransfer",
+				"cash"
+			]
+		},
+		{
+			"modification": "createEnum",
+			"enumName": "PaymentPurpose",
+			"values": [
+				"membershipFee",
+				"eventRegistration"
+			]
+		},
+		{
+			"modification": "createEnum",
+			"enumName": "CommunicationType",
+			"values": [
+				"call",
+				"email",
+				"meeting"
+			]
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "User",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "user",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "MembershipPlan",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "membership_plan",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Event",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "event",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Payment",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "payment",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "CommunicationLog",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "communication_log",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "personId",
+				"columnName": "person_id",
+				"type": "Uuid",
+				"nullable": true,
+				"columnType": "uuid"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "email",
+				"columnName": "email",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "phone",
+				"columnName": "phone",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "address",
+				"columnName": "address",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "MembershipPlan",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "MembershipPlan",
+			"field": {
+				"name": "description",
+				"columnName": "description",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "MembershipPlan",
+			"field": {
+				"name": "price",
+				"columnName": "price",
+				"type": "Double",
+				"nullable": true,
+				"columnType": "double precision"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "MembershipPlan",
+			"field": {
+				"name": "duration",
+				"columnName": "duration",
+				"type": "Enum",
+				"nullable": false,
+				"columnType": "Duration"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "MembershipPlan",
+			"field": {
+				"name": "benefits",
+				"columnName": "benefits",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Event",
+			"field": {
+				"name": "title",
+				"columnName": "title",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Event",
+			"field": {
+				"name": "description",
+				"columnName": "description",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Event",
+			"field": {
+				"name": "date",
+				"columnName": "date",
+				"type": "Date",
+				"nullable": true,
+				"columnType": "date"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Event",
+			"field": {
+				"name": "time",
+				"columnName": "time",
+				"type": "DateTime",
+				"nullable": true,
+				"columnType": "timestamptz"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Event",
+			"field": {
+				"name": "location",
+				"columnName": "location",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Event",
+			"field": {
+				"name": "registrationFee",
+				"columnName": "registration_fee",
+				"type": "Double",
+				"nullable": true,
+				"columnType": "double precision"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Payment",
+			"field": {
+				"name": "amount",
+				"columnName": "amount",
+				"type": "Double",
+				"nullable": true,
+				"columnType": "double precision"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Payment",
+			"field": {
+				"name": "date",
+				"columnName": "date",
+				"type": "Date",
+				"nullable": true,
+				"columnType": "date"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Payment",
+			"field": {
+				"name": "paymentMethod",
+				"columnName": "payment_method",
+				"type": "Enum",
+				"nullable": false,
+				"columnType": "PaymentMethod"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Payment",
+			"field": {
+				"name": "purpose",
+				"columnName": "purpose",
+				"type": "Enum",
+				"nullable": false,
+				"columnType": "PaymentPurpose"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "CommunicationLog",
+			"field": {
+				"name": "type",
+				"columnName": "type",
+				"type": "Enum",
+				"nullable": false,
+				"columnType": "CommunicationType"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "CommunicationLog",
+			"field": {
+				"name": "date",
+				"columnName": "date",
+				"type": "Date",
+				"nullable": true,
+				"columnType": "date"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "CommunicationLog",
+			"field": {
+				"name": "time",
+				"columnName": "time",
+				"type": "DateTime",
+				"nullable": true,
+				"columnType": "timestamptz"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "CommunicationLog",
+			"field": {
+				"name": "notes",
+				"columnName": "notes",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "User",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "membershipPlan",
+				"target": "MembershipPlan",
+				"inversedBy": "members",
+				"joiningColumn": {
+					"columnName": "membership_plan_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "members",
+				"target": "User",
+				"ownedBy": "membershipPlan"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "User",
+			"owningSide": {
+				"type": "ManyHasMany",
+				"name": "attendedEvents",
+				"target": "Event",
+				"inversedBy": "attendingMembers",
+				"joiningTable": {
+					"tableName": "user_attended_events",
+					"joiningColumn": {
+						"columnName": "user_id",
+						"onDelete": "cascade"
+					},
+					"inverseJoiningColumn": {
+						"columnName": "event_id",
+						"onDelete": "cascade"
+					},
+					"eventLog": {
+						"enabled": true
+					}
+				}
+			},
+			"inverseSide": {
+				"type": "ManyHasMany",
+				"name": "attendingMembers",
+				"target": "User",
+				"ownedBy": "attendedEvents"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Payment",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "member",
+				"target": "User",
+				"inversedBy": "paymentHistory",
+				"joiningColumn": {
+					"columnName": "member_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "paymentHistory",
+				"target": "Payment",
+				"ownedBy": "member"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "CommunicationLog",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "member",
+				"target": "User",
+				"inversedBy": "communicationLogs",
+				"joiningColumn": {
+					"columnName": "member_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "communicationLogs",
+				"target": "CommunicationLog",
+				"ownedBy": "member"
+			}
+		},
+		{
+			"modification": "createUniqueConstraint",
+			"entityName": "User",
+			"unique": {
+				"fields": [
+					"personId",
+					"email"
+				],
+				"name": "unique_User_personId_email"
+			}
+		},
+		{
+			"modification": "patchAclSchema",
+			"patch": [
+				{
+					"op": "add",
+					"path": "/roles/eventOrganizer",
+					"value": {
+						"variables": {
+							"personId": {
+								"type": "predefined",
+								"value": "personID"
+							}
+						},
+						"stages": "*",
+						"entities": {
+							"User": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"personId": true,
+										"name": true,
+										"email": true,
+										"phone": true,
+										"address": true,
+										"membershipPlan": true,
+										"attendedEvents": true,
+										"paymentHistory": true,
+										"communicationLogs": true
+									}
+								}
+							},
+							"Event": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"title": true,
+										"description": true,
+										"date": true,
+										"time": true,
+										"location": true,
+										"attendingMembers": true,
+										"registrationFee": true
+									},
+									"update": {
+										"title": true,
+										"description": true,
+										"date": true,
+										"time": true,
+										"location": true,
+										"attendingMembers": true,
+										"registrationFee": true
+									},
+									"create": {
+										"title": true,
+										"description": true,
+										"date": true,
+										"time": true,
+										"location": true,
+										"attendingMembers": true,
+										"registrationFee": true
+									}
+								}
+							},
+							"CommunicationLog": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"type": true,
+										"date": true,
+										"time": true,
+										"member": true,
+										"notes": true
+									},
+									"update": {
+										"type": true,
+										"date": true,
+										"time": true,
+										"member": true,
+										"notes": true
+									},
+									"create": {
+										"type": true,
+										"date": true,
+										"time": true,
+										"member": true,
+										"notes": true
+									}
+								}
+							}
+						},
+						"s3": {
+							"**": {
+								"upload": true,
+								"read": true
+							}
+						}
+					}
+				},
+				{
+					"op": "add",
+					"path": "/roles/member",
+					"value": {
+						"variables": {
+							"personId": {
+								"type": "predefined",
+								"value": "personID"
+							}
+						},
+						"stages": "*",
+						"entities": {
+							"User": {
+								"predicates": {
+									"predicateUsermember ": {
+										"personId": "personId"
+									}
+								},
+								"operations": {
+									"read": {
+										"personId": "predicateUsermember ",
+										"name": "predicateUsermember ",
+										"email": "predicateUsermember ",
+										"phone": "predicateUsermember ",
+										"address": "predicateUsermember ",
+										"membershipPlan": "predicateUsermember ",
+										"attendedEvents": "predicateUsermember ",
+										"paymentHistory": "predicateUsermember ",
+										"communicationLogs": "predicateUsermember "
+									},
+									"update": {
+										"personId": "predicateUsermember ",
+										"name": "predicateUsermember ",
+										"email": "predicateUsermember ",
+										"phone": "predicateUsermember ",
+										"address": "predicateUsermember ",
+										"membershipPlan": "predicateUsermember ",
+										"attendedEvents": "predicateUsermember ",
+										"paymentHistory": "predicateUsermember ",
+										"communicationLogs": "predicateUsermember "
+									}
+								}
+							},
+							"Payment": {
+								"predicates": {
+									"predicatePaymentmember ": {
+										"member": {
+											"personId": "personId"
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"member": "predicatePaymentmember ",
+										"amount": "predicatePaymentmember ",
+										"date": "predicatePaymentmember ",
+										"paymentMethod": "predicatePaymentmember ",
+										"purpose": "predicatePaymentmember "
+									},
+									"update": {
+										"member": "predicatePaymentmember ",
+										"amount": "predicatePaymentmember ",
+										"date": "predicatePaymentmember ",
+										"paymentMethod": "predicatePaymentmember ",
+										"purpose": "predicatePaymentmember "
+									},
+									"create": {
+										"member": "predicatePaymentmember ",
+										"amount": "predicatePaymentmember ",
+										"date": "predicatePaymentmember ",
+										"paymentMethod": "predicatePaymentmember ",
+										"purpose": "predicatePaymentmember "
+									}
+								}
+							}
+						},
+						"s3": {
+							"**": {
+								"upload": true,
+								"read": true
+							}
+						}
+					}
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,970 @@
+{
+	"formatVersion": 4,
+	"modifications": [
+		{
+			"modification": "createEnum",
+			"enumName": "UserRole",
+			"values": [
+				"supplier"
+			]
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "User",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "user",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Product",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "product",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Image",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "image",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Order",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "order",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Invoice",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "invoice",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "OrderedProduct",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "ordered_product",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "personId",
+				"columnName": "person_id",
+				"type": "Uuid",
+				"nullable": true,
+				"columnType": "uuid"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "email",
+				"columnName": "email",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "phone",
+				"columnName": "phone",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "address",
+				"columnName": "address",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "company",
+				"columnName": "company",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "role",
+				"columnName": "role",
+				"type": "Enum",
+				"nullable": true,
+				"columnType": "UserRole"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Product",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Product",
+			"field": {
+				"name": "description",
+				"columnName": "description",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Product",
+			"field": {
+				"name": "price",
+				"columnName": "price",
+				"type": "Double",
+				"nullable": true,
+				"columnType": "double precision"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Product",
+			"field": {
+				"name": "availableQuantity",
+				"columnName": "available_quantity",
+				"type": "Integer",
+				"nullable": true,
+				"columnType": "integer"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Image",
+			"field": {
+				"name": "url",
+				"columnName": "url",
+				"type": "String",
+				"nullable": false,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Image",
+			"field": {
+				"name": "width",
+				"columnName": "width",
+				"type": "Integer",
+				"nullable": true,
+				"columnType": "integer"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Image",
+			"field": {
+				"name": "height",
+				"columnName": "height",
+				"type": "Integer",
+				"nullable": true,
+				"columnType": "integer"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Image",
+			"field": {
+				"name": "size",
+				"columnName": "size",
+				"type": "Integer",
+				"nullable": true,
+				"columnType": "integer"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Image",
+			"field": {
+				"name": "type",
+				"columnName": "type",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Image",
+			"field": {
+				"name": "alt",
+				"columnName": "alt",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Image",
+			"field": {
+				"name": "createdAt",
+				"columnName": "created_at",
+				"type": "DateTime",
+				"nullable": false,
+				"columnType": "timestamptz",
+				"default": "now"
+			},
+			"fillValue": "now"
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Order",
+			"field": {
+				"name": "orderDate",
+				"columnName": "order_date",
+				"type": "DateTime",
+				"nullable": true,
+				"columnType": "timestamptz"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Order",
+			"field": {
+				"name": "shippingDate",
+				"columnName": "shipping_date",
+				"type": "DateTime",
+				"nullable": true,
+				"columnType": "timestamptz"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Order",
+			"field": {
+				"name": "status",
+				"columnName": "status",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Invoice",
+			"field": {
+				"name": "invoiceDate",
+				"columnName": "invoice_date",
+				"type": "DateTime",
+				"nullable": true,
+				"columnType": "timestamptz"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Invoice",
+			"field": {
+				"name": "dueDate",
+				"columnName": "due_date",
+				"type": "DateTime",
+				"nullable": true,
+				"columnType": "timestamptz"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Invoice",
+			"field": {
+				"name": "totalAmount",
+				"columnName": "total_amount",
+				"type": "Double",
+				"nullable": true,
+				"columnType": "double precision"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Invoice",
+			"field": {
+				"name": "paymentStatus",
+				"columnName": "payment_status",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "OrderedProduct",
+			"field": {
+				"name": "quantity",
+				"columnName": "quantity",
+				"type": "Integer",
+				"nullable": true,
+				"columnType": "integer"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Product",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "supplier",
+				"target": "User",
+				"inversedBy": "products",
+				"joiningColumn": {
+					"columnName": "supplier_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "products",
+				"target": "Product",
+				"ownedBy": "supplier"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Product",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "image",
+				"target": "Image",
+				"inversedBy": "productImage",
+				"nullable": true,
+				"joiningColumn": {
+					"columnName": "image_id",
+					"onDelete": "set null"
+				}
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "productImage",
+				"target": "Product",
+				"ownedBy": "image"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Order",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "client",
+				"target": "User",
+				"inversedBy": "orders",
+				"joiningColumn": {
+					"columnName": "client_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "orders",
+				"target": "Order",
+				"ownedBy": "client"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Order",
+			"owningSide": {
+				"type": "OneHasOne",
+				"name": "invoice",
+				"target": "Invoice",
+				"inversedBy": "order",
+				"joiningColumn": {
+					"columnName": "invoice_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasOne",
+				"name": "order",
+				"target": "Order",
+				"ownedBy": "invoice",
+				"nullable": true
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Invoice",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "client",
+				"target": "User",
+				"inversedBy": "invoices",
+				"joiningColumn": {
+					"columnName": "client_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "invoices",
+				"target": "Invoice",
+				"ownedBy": "client"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "OrderedProduct",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "product",
+				"target": "Product",
+				"inversedBy": "orderedProducts",
+				"joiningColumn": {
+					"columnName": "product_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "orderedProducts",
+				"target": "OrderedProduct",
+				"ownedBy": "product"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "OrderedProduct",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "order",
+				"target": "Order",
+				"inversedBy": "orderedProducts",
+				"joiningColumn": {
+					"columnName": "order_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "orderedProducts",
+				"target": "OrderedProduct",
+				"ownedBy": "order"
+			}
+		},
+		{
+			"modification": "createUniqueConstraint",
+			"entityName": "User",
+			"unique": {
+				"fields": [
+					"personId",
+					"email"
+				],
+				"name": "unique_User_personId_email"
+			}
+		},
+		{
+			"modification": "patchAclSchema",
+			"patch": [
+				{
+					"op": "add",
+					"path": "/roles/supplier",
+					"value": {
+						"variables": {
+							"personId": {
+								"type": "predefined",
+								"value": "personID"
+							}
+						},
+						"stages": "*",
+						"entities": {
+							"User": {
+								"predicates": {
+									"predicateUsersupplier ": {
+										"personId": "personId"
+									}
+								},
+								"operations": {
+									"read": {
+										"personId": "predicateUsersupplier ",
+										"name": "predicateUsersupplier ",
+										"email": "predicateUsersupplier ",
+										"phone": "predicateUsersupplier ",
+										"address": "predicateUsersupplier ",
+										"company": "predicateUsersupplier ",
+										"role": "predicateUsersupplier ",
+										"products": "predicateUsersupplier ",
+										"orders": "predicateUsersupplier ",
+										"invoices": "predicateUsersupplier "
+									},
+									"update": {
+										"personId": "predicateUsersupplier ",
+										"name": "predicateUsersupplier ",
+										"email": "predicateUsersupplier ",
+										"phone": "predicateUsersupplier ",
+										"address": "predicateUsersupplier ",
+										"company": "predicateUsersupplier ",
+										"role": "predicateUsersupplier ",
+										"products": "predicateUsersupplier ",
+										"orders": "predicateUsersupplier ",
+										"invoices": "predicateUsersupplier "
+									}
+								}
+							},
+							"Product": {
+								"predicates": {
+									"predicateProductsupplier ": {
+										"supplier": {
+											"personId": "personId"
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"name": "predicateProductsupplier ",
+										"description": "predicateProductsupplier ",
+										"price": "predicateProductsupplier ",
+										"availableQuantity": "predicateProductsupplier ",
+										"supplier": "predicateProductsupplier ",
+										"image": "predicateProductsupplier ",
+										"orderedProducts": "predicateProductsupplier "
+									},
+									"update": {
+										"name": "predicateProductsupplier ",
+										"description": "predicateProductsupplier ",
+										"price": "predicateProductsupplier ",
+										"availableQuantity": "predicateProductsupplier ",
+										"supplier": "predicateProductsupplier ",
+										"image": "predicateProductsupplier ",
+										"orderedProducts": "predicateProductsupplier "
+									}
+								}
+							},
+							"Order": {
+								"predicates": {
+									"predicateOrdersupplier ": {
+										"orderedProducts": {
+											"product": {
+												"supplier": {
+													"personId": "personId"
+												}
+											}
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"client": "predicateOrdersupplier ",
+										"orderedProducts": "predicateOrdersupplier ",
+										"orderDate": "predicateOrdersupplier ",
+										"shippingDate": "predicateOrdersupplier ",
+										"status": "predicateOrdersupplier ",
+										"invoice": "predicateOrdersupplier "
+									},
+									"update": {
+										"client": "predicateOrdersupplier ",
+										"orderedProducts": "predicateOrdersupplier ",
+										"orderDate": "predicateOrdersupplier ",
+										"shippingDate": "predicateOrdersupplier ",
+										"status": "predicateOrdersupplier ",
+										"invoice": "predicateOrdersupplier "
+									}
+								}
+							},
+							"Invoice": {
+								"predicates": {
+									"predicateInvoicesupplier ": {
+										"order": {
+											"orderedProducts": {
+												"product": {
+													"supplier": {
+														"personId": "personId"
+													}
+												}
+											}
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"client": "predicateInvoicesupplier ",
+										"order": "predicateInvoicesupplier ",
+										"invoiceDate": "predicateInvoicesupplier ",
+										"dueDate": "predicateInvoicesupplier ",
+										"totalAmount": "predicateInvoicesupplier ",
+										"paymentStatus": "predicateInvoicesupplier "
+									}
+								}
+							},
+							"OrderedProduct": {
+								"predicates": {
+									"predicateOrderedProductsupplier ": {
+										"product": {
+											"supplier": {
+												"personId": "personId"
+											}
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"product": "predicateOrderedProductsupplier ",
+										"order": "predicateOrderedProductsupplier ",
+										"quantity": "predicateOrderedProductsupplier "
+									},
+									"update": {
+										"product": "predicateOrderedProductsupplier ",
+										"order": "predicateOrderedProductsupplier ",
+										"quantity": "predicateOrderedProductsupplier "
+									}
+								}
+							},
+							"Image": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"url": true,
+										"width": true,
+										"height": true,
+										"size": true,
+										"type": true,
+										"alt": true,
+										"createdAt": true,
+										"productImage": true
+									},
+									"edit": {
+										"url": true,
+										"width": true,
+										"height": true,
+										"size": true,
+										"type": true,
+										"alt": true,
+										"createdAt": true,
+										"productImage": true
+									}
+								}
+							}
+						},
+						"s3": {
+							"**": {
+								"upload": true,
+								"read": true
+							}
+						}
+					}
+				},
+				{
+					"op": "add",
+					"path": "/roles/client",
+					"value": {
+						"variables": {
+							"personId": {
+								"type": "predefined",
+								"value": "personID"
+							}
+						},
+						"stages": "*",
+						"entities": {
+							"User": {
+								"predicates": {
+									"predicateUserclient ": {
+										"personId": "personId"
+									}
+								},
+								"operations": {
+									"read": {
+										"personId": "predicateUserclient ",
+										"name": "predicateUserclient ",
+										"email": "predicateUserclient ",
+										"phone": "predicateUserclient ",
+										"address": "predicateUserclient ",
+										"company": "predicateUserclient ",
+										"role": "predicateUserclient ",
+										"products": "predicateUserclient ",
+										"orders": "predicateUserclient ",
+										"invoices": "predicateUserclient "
+									},
+									"update": {
+										"personId": "predicateUserclient ",
+										"name": "predicateUserclient ",
+										"email": "predicateUserclient ",
+										"phone": "predicateUserclient ",
+										"address": "predicateUserclient ",
+										"company": "predicateUserclient ",
+										"role": "predicateUserclient ",
+										"products": "predicateUserclient ",
+										"orders": "predicateUserclient ",
+										"invoices": "predicateUserclient "
+									}
+								}
+							},
+							"Product": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"name": true,
+										"description": true,
+										"price": true,
+										"availableQuantity": true,
+										"supplier": true,
+										"image": true,
+										"orderedProducts": true
+									}
+								}
+							},
+							"Order": {
+								"predicates": {
+									"predicateOrderclient ": {
+										"client": {
+											"personId": "personId"
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"client": "predicateOrderclient ",
+										"orderedProducts": "predicateOrderclient ",
+										"orderDate": "predicateOrderclient ",
+										"shippingDate": "predicateOrderclient ",
+										"status": "predicateOrderclient ",
+										"invoice": "predicateOrderclient "
+									},
+									"update": {
+										"client": "predicateOrderclient ",
+										"orderedProducts": "predicateOrderclient ",
+										"orderDate": "predicateOrderclient ",
+										"shippingDate": "predicateOrderclient ",
+										"status": "predicateOrderclient ",
+										"invoice": "predicateOrderclient "
+									},
+									"create": {
+										"client": "predicateOrderclient ",
+										"orderedProducts": "predicateOrderclient ",
+										"orderDate": "predicateOrderclient ",
+										"shippingDate": "predicateOrderclient ",
+										"status": "predicateOrderclient ",
+										"invoice": "predicateOrderclient "
+									}
+								}
+							},
+							"Invoice": {
+								"predicates": {
+									"predicateInvoiceclient ": {
+										"client": {
+											"personId": "personId"
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"client": "predicateInvoiceclient ",
+										"order": "predicateInvoiceclient ",
+										"invoiceDate": "predicateInvoiceclient ",
+										"dueDate": "predicateInvoiceclient ",
+										"totalAmount": "predicateInvoiceclient ",
+										"paymentStatus": "predicateInvoiceclient "
+									},
+									"update": {
+										"client": "predicateInvoiceclient ",
+										"order": "predicateInvoiceclient ",
+										"invoiceDate": "predicateInvoiceclient ",
+										"dueDate": "predicateInvoiceclient ",
+										"totalAmount": "predicateInvoiceclient ",
+										"paymentStatus": "predicateInvoiceclient "
+									},
+									"create": {
+										"client": "predicateInvoiceclient ",
+										"order": "predicateInvoiceclient ",
+										"invoiceDate": "predicateInvoiceclient ",
+										"dueDate": "predicateInvoiceclient ",
+										"totalAmount": "predicateInvoiceclient ",
+										"paymentStatus": "predicateInvoiceclient "
+									}
+								}
+							},
+							"OrderedProduct": {
+								"predicates": {
+									"predicateOrderedProductclient ": {
+										"order": {
+											"client": {
+												"personId": "personId"
+											}
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"product": "predicateOrderedProductclient ",
+										"order": "predicateOrderedProductclient ",
+										"quantity": "predicateOrderedProductclient "
+									},
+									"update": {
+										"product": "predicateOrderedProductclient ",
+										"order": "predicateOrderedProductclient ",
+										"quantity": "predicateOrderedProductclient "
+									},
+									"create": {
+										"product": "predicateOrderedProductclient ",
+										"order": "predicateOrderedProductclient ",
+										"quantity": "predicateOrderedProductclient "
+									}
+								}
+							},
+							"Image": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"url": true,
+										"width": true,
+										"height": true,
+										"size": true,
+										"type": true,
+										"alt": true,
+										"createdAt": true,
+										"productImage": true
+									}
+								}
+							}
+						},
+						"s3": {
+							"**": {
+								"upload": true,
+								"read": true
+							}
+						}
+					}
+				}
+			]
+		}
+	]
+}

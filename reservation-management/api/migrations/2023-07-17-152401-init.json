@@ -1,0 +1,797 @@
+{
+	"formatVersion": 4,
+	"modifications": [
+		{
+			"modification": "createEnum",
+			"enumName": "BookingStatus",
+			"values": [
+				"pending",
+				"confirmed",
+				"canceled"
+			]
+		},
+		{
+			"modification": "createEnum",
+			"enumName": "RoomType",
+			"values": [
+				"single",
+				"double",
+				"suite"
+			]
+		},
+		{
+			"modification": "createEnum",
+			"enumName": "PaymentStatus",
+			"values": [
+				"pending",
+				"paid",
+				"refunded"
+			]
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Booking",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "booking",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Customer",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "customer",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Room",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "room",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Service",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "service",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Payment",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "payment",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Booking",
+			"field": {
+				"name": "checkInDate",
+				"columnName": "check_in_date",
+				"type": "Date",
+				"nullable": true,
+				"columnType": "date"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Booking",
+			"field": {
+				"name": "checkOutDate",
+				"columnName": "check_out_date",
+				"type": "Date",
+				"nullable": true,
+				"columnType": "date"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Booking",
+			"field": {
+				"name": "totalPrice",
+				"columnName": "total_price",
+				"type": "Double",
+				"nullable": true,
+				"columnType": "double precision"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Booking",
+			"field": {
+				"name": "status",
+				"columnName": "status",
+				"type": "Enum",
+				"nullable": false,
+				"columnType": "BookingStatus"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Customer",
+			"field": {
+				"name": "personId",
+				"columnName": "person_id",
+				"type": "Uuid",
+				"nullable": true,
+				"columnType": "uuid"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Customer",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Customer",
+			"field": {
+				"name": "email",
+				"columnName": "email",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Customer",
+			"field": {
+				"name": "phoneNumber",
+				"columnName": "phone_number",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Customer",
+			"field": {
+				"name": "address",
+				"columnName": "address",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Room",
+			"field": {
+				"name": "type",
+				"columnName": "type",
+				"type": "Enum",
+				"nullable": false,
+				"columnType": "RoomType"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Room",
+			"field": {
+				"name": "description",
+				"columnName": "description",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Room",
+			"field": {
+				"name": "capacity",
+				"columnName": "capacity",
+				"type": "Integer",
+				"nullable": true,
+				"columnType": "integer"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Room",
+			"field": {
+				"name": "pricePerNight",
+				"columnName": "price_per_night",
+				"type": "Double",
+				"nullable": true,
+				"columnType": "double precision"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Room",
+			"field": {
+				"name": "availability",
+				"columnName": "availability",
+				"type": "Bool",
+				"nullable": true,
+				"columnType": "boolean"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Service",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Service",
+			"field": {
+				"name": "description",
+				"columnName": "description",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Service",
+			"field": {
+				"name": "price",
+				"columnName": "price",
+				"type": "Double",
+				"nullable": true,
+				"columnType": "double precision"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Payment",
+			"field": {
+				"name": "amount",
+				"columnName": "amount",
+				"type": "Double",
+				"nullable": true,
+				"columnType": "double precision"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Payment",
+			"field": {
+				"name": "date",
+				"columnName": "date",
+				"type": "Date",
+				"nullable": true,
+				"columnType": "date"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Payment",
+			"field": {
+				"name": "paymentMethod",
+				"columnName": "payment_method",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Payment",
+			"field": {
+				"name": "status",
+				"columnName": "status",
+				"type": "Enum",
+				"nullable": false,
+				"columnType": "PaymentStatus"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Booking",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "customer",
+				"target": "Customer",
+				"inversedBy": "bookings",
+				"joiningColumn": {
+					"columnName": "customer_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "bookings",
+				"target": "Booking",
+				"ownedBy": "customer"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Booking",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "room",
+				"target": "Room",
+				"inversedBy": "bookings",
+				"joiningColumn": {
+					"columnName": "room_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "bookings",
+				"target": "Booking",
+				"ownedBy": "room"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Booking",
+			"owningSide": {
+				"type": "ManyHasMany",
+				"name": "services",
+				"target": "Service",
+				"inversedBy": "bookings",
+				"joiningTable": {
+					"tableName": "booking_services",
+					"joiningColumn": {
+						"columnName": "booking_id",
+						"onDelete": "cascade"
+					},
+					"inverseJoiningColumn": {
+						"columnName": "service_id",
+						"onDelete": "cascade"
+					},
+					"eventLog": {
+						"enabled": true
+					}
+				}
+			},
+			"inverseSide": {
+				"type": "ManyHasMany",
+				"name": "bookings",
+				"target": "Booking",
+				"ownedBy": "services"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Payment",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "customer",
+				"target": "Customer",
+				"inversedBy": "payments",
+				"joiningColumn": {
+					"columnName": "customer_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "payments",
+				"target": "Payment",
+				"ownedBy": "customer"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Payment",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "booking",
+				"target": "Booking",
+				"inversedBy": "payments",
+				"joiningColumn": {
+					"columnName": "booking_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "payments",
+				"target": "Payment",
+				"ownedBy": "booking"
+			}
+		},
+		{
+			"modification": "createUniqueConstraint",
+			"entityName": "Customer",
+			"unique": {
+				"fields": [
+					"personId",
+					"email"
+				],
+				"name": "unique_Customer_personId_email"
+			}
+		},
+		{
+			"modification": "patchAclSchema",
+			"patch": [
+				{
+					"op": "add",
+					"path": "/roles/receptionist",
+					"value": {
+						"variables": {
+							"personId": {
+								"type": "predefined",
+								"value": "personID"
+							}
+						},
+						"stages": "*",
+						"entities": {
+							"Booking": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"customer": true,
+										"room": true,
+										"checkInDate": true,
+										"checkOutDate": true,
+										"services": true,
+										"totalPrice": true,
+										"status": true,
+										"payments": true
+									},
+									"update": {
+										"customer": true,
+										"room": true,
+										"checkInDate": true,
+										"checkOutDate": true,
+										"services": true,
+										"totalPrice": true,
+										"status": true,
+										"payments": true
+									},
+									"create": {
+										"customer": true,
+										"room": true,
+										"checkInDate": true,
+										"checkOutDate": true,
+										"services": true,
+										"totalPrice": true,
+										"status": true,
+										"payments": true
+									}
+								}
+							},
+							"Customer": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"personId": true,
+										"name": true,
+										"email": true,
+										"phoneNumber": true,
+										"address": true,
+										"bookings": true,
+										"payments": true
+									},
+									"update": {
+										"personId": true,
+										"name": true,
+										"email": true,
+										"phoneNumber": true,
+										"address": true,
+										"bookings": true,
+										"payments": true
+									},
+									"create": {
+										"personId": true,
+										"name": true,
+										"email": true,
+										"phoneNumber": true,
+										"address": true,
+										"bookings": true,
+										"payments": true
+									}
+								}
+							},
+							"Room": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"type": true,
+										"description": true,
+										"capacity": true,
+										"pricePerNight": true,
+										"availability": true,
+										"bookings": true
+									},
+									"update": {
+										"type": true,
+										"description": true,
+										"capacity": true,
+										"pricePerNight": true,
+										"availability": true,
+										"bookings": true
+									},
+									"create": {
+										"type": true,
+										"description": true,
+										"capacity": true,
+										"pricePerNight": true,
+										"availability": true,
+										"bookings": true
+									}
+								}
+							},
+							"Service": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"name": true,
+										"description": true,
+										"price": true,
+										"bookings": true
+									},
+									"update": {
+										"name": true,
+										"description": true,
+										"price": true,
+										"bookings": true
+									},
+									"create": {
+										"name": true,
+										"description": true,
+										"price": true,
+										"bookings": true
+									}
+								}
+							},
+							"Payment": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"customer": true,
+										"booking": true,
+										"amount": true,
+										"date": true,
+										"paymentMethod": true,
+										"status": true
+									},
+									"update": {
+										"customer": true,
+										"booking": true,
+										"amount": true,
+										"date": true,
+										"paymentMethod": true,
+										"status": true
+									},
+									"create": {
+										"customer": true,
+										"booking": true,
+										"amount": true,
+										"date": true,
+										"paymentMethod": true,
+										"status": true
+									}
+								}
+							}
+						},
+						"s3": {
+							"**": {
+								"upload": true,
+								"read": true
+							}
+						},
+						"tenant": {
+							"invite": true,
+							"manage": {
+								"customer": true
+							}
+						}
+					}
+				},
+				{
+					"op": "add",
+					"path": "/roles/customer",
+					"value": {
+						"variables": {
+							"personId": {
+								"type": "predefined",
+								"value": "personID"
+							}
+						},
+						"stages": "*",
+						"entities": {
+							"Booking": {
+								"predicates": {
+									"predicateBookingcustomer ": {
+										"customer": {
+											"personId": "personId"
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"customer": "predicateBookingcustomer ",
+										"room": "predicateBookingcustomer ",
+										"checkInDate": "predicateBookingcustomer ",
+										"checkOutDate": "predicateBookingcustomer ",
+										"services": "predicateBookingcustomer ",
+										"totalPrice": "predicateBookingcustomer ",
+										"status": "predicateBookingcustomer ",
+										"payments": "predicateBookingcustomer "
+									},
+									"update": {
+										"customer": "predicateBookingcustomer ",
+										"room": "predicateBookingcustomer ",
+										"checkInDate": "predicateBookingcustomer ",
+										"checkOutDate": "predicateBookingcustomer ",
+										"services": "predicateBookingcustomer ",
+										"totalPrice": "predicateBookingcustomer ",
+										"status": "predicateBookingcustomer ",
+										"payments": "predicateBookingcustomer "
+									}
+								}
+							},
+							"Customer": {
+								"predicates": {
+									"predicateCustomercustomer ": {
+										"personId": "personId"
+									}
+								},
+								"operations": {
+									"read": {
+										"personId": "predicateCustomercustomer ",
+										"name": "predicateCustomercustomer ",
+										"email": "predicateCustomercustomer ",
+										"phoneNumber": "predicateCustomercustomer ",
+										"address": "predicateCustomercustomer ",
+										"bookings": "predicateCustomercustomer ",
+										"payments": "predicateCustomercustomer "
+									},
+									"update": {
+										"personId": "predicateCustomercustomer ",
+										"name": "predicateCustomercustomer ",
+										"email": "predicateCustomercustomer ",
+										"phoneNumber": "predicateCustomercustomer ",
+										"address": "predicateCustomercustomer ",
+										"bookings": "predicateCustomercustomer ",
+										"payments": "predicateCustomercustomer "
+									}
+								}
+							},
+							"Payment": {
+								"predicates": {
+									"predicatePaymentcustomer ": {
+										"customer": {
+											"personId": "personId"
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"customer": "predicatePaymentcustomer ",
+										"booking": "predicatePaymentcustomer ",
+										"amount": "predicatePaymentcustomer ",
+										"date": "predicatePaymentcustomer ",
+										"paymentMethod": "predicatePaymentcustomer ",
+										"status": "predicatePaymentcustomer "
+									},
+									"update": {
+										"customer": "predicatePaymentcustomer ",
+										"booking": "predicatePaymentcustomer ",
+										"amount": "predicatePaymentcustomer ",
+										"date": "predicatePaymentcustomer ",
+										"paymentMethod": "predicatePaymentcustomer ",
+										"status": "predicatePaymentcustomer "
+									},
+									"create": {
+										"customer": "predicatePaymentcustomer ",
+										"booking": "predicatePaymentcustomer ",
+										"amount": "predicatePaymentcustomer ",
+										"date": "predicatePaymentcustomer ",
+										"paymentMethod": "predicatePaymentcustomer ",
+										"status": "predicatePaymentcustomer "
+									}
+								}
+							}
+						},
+						"s3": {
+							"**": {
+								"upload": true,
+								"read": true
+							}
+						}
+					}
+				}
+			]
+		}
+	]
+}

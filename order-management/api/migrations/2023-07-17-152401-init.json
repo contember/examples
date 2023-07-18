@@ -1,0 +1,1088 @@
+{
+	"formatVersion": 4,
+	"modifications": [
+		{
+			"modification": "createEnum",
+			"enumName": "ShippingStatus",
+			"values": [
+				"pending",
+				"shipped",
+				"delivered"
+			]
+		},
+		{
+			"modification": "createEnum",
+			"enumName": "PaymentMethod",
+			"values": [
+				"creditCard",
+				"bankTransfer",
+				"cash"
+			]
+		},
+		{
+			"modification": "createEnum",
+			"enumName": "PaymentStatus",
+			"values": [
+				"pending",
+				"paid",
+				"refunded"
+			]
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "User",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "user",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Product",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "product",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Image",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "image",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Order",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "order",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "OrderProduct",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "order_product",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Shipping",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "shipping",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Payment",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "payment",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "personId",
+				"columnName": "person_id",
+				"type": "Uuid",
+				"nullable": true,
+				"columnType": "uuid"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "email",
+				"columnName": "email",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "phone",
+				"columnName": "phone",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "address",
+				"columnName": "address",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Product",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Product",
+			"field": {
+				"name": "description",
+				"columnName": "description",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Product",
+			"field": {
+				"name": "price",
+				"columnName": "price",
+				"type": "Double",
+				"nullable": true,
+				"columnType": "double precision"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Product",
+			"field": {
+				"name": "availableQuantity",
+				"columnName": "available_quantity",
+				"type": "Integer",
+				"nullable": true,
+				"columnType": "integer"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Image",
+			"field": {
+				"name": "url",
+				"columnName": "url",
+				"type": "String",
+				"nullable": false,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Image",
+			"field": {
+				"name": "width",
+				"columnName": "width",
+				"type": "Integer",
+				"nullable": true,
+				"columnType": "integer"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Image",
+			"field": {
+				"name": "height",
+				"columnName": "height",
+				"type": "Integer",
+				"nullable": true,
+				"columnType": "integer"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Image",
+			"field": {
+				"name": "size",
+				"columnName": "size",
+				"type": "Integer",
+				"nullable": true,
+				"columnType": "integer"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Image",
+			"field": {
+				"name": "type",
+				"columnName": "type",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Image",
+			"field": {
+				"name": "alt",
+				"columnName": "alt",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Image",
+			"field": {
+				"name": "createdAt",
+				"columnName": "created_at",
+				"type": "DateTime",
+				"nullable": false,
+				"columnType": "timestamptz",
+				"default": "now"
+			},
+			"fillValue": "now"
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Order",
+			"field": {
+				"name": "orderDate",
+				"columnName": "order_date",
+				"type": "DateTime",
+				"nullable": true,
+				"columnType": "timestamptz"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "OrderProduct",
+			"field": {
+				"name": "quantity",
+				"columnName": "quantity",
+				"type": "Integer",
+				"nullable": true,
+				"columnType": "integer"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Shipping",
+			"field": {
+				"name": "trackingNumber",
+				"columnName": "tracking_number",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Shipping",
+			"field": {
+				"name": "carrier",
+				"columnName": "carrier",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Shipping",
+			"field": {
+				"name": "shippingDate",
+				"columnName": "shipping_date",
+				"type": "DateTime",
+				"nullable": true,
+				"columnType": "timestamptz"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Shipping",
+			"field": {
+				"name": "estimatedDeliveryDate",
+				"columnName": "estimated_delivery_date",
+				"type": "DateTime",
+				"nullable": true,
+				"columnType": "timestamptz"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Shipping",
+			"field": {
+				"name": "status",
+				"columnName": "status",
+				"type": "Enum",
+				"nullable": false,
+				"columnType": "ShippingStatus"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Payment",
+			"field": {
+				"name": "amount",
+				"columnName": "amount",
+				"type": "Double",
+				"nullable": true,
+				"columnType": "double precision"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Payment",
+			"field": {
+				"name": "date",
+				"columnName": "date",
+				"type": "DateTime",
+				"nullable": true,
+				"columnType": "timestamptz"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Payment",
+			"field": {
+				"name": "method",
+				"columnName": "method",
+				"type": "Enum",
+				"nullable": false,
+				"columnType": "PaymentMethod"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Payment",
+			"field": {
+				"name": "status",
+				"columnName": "status",
+				"type": "Enum",
+				"nullable": false,
+				"columnType": "PaymentStatus"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Product",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "image",
+				"target": "Image",
+				"inversedBy": "productImage",
+				"nullable": true,
+				"joiningColumn": {
+					"columnName": "image_id",
+					"onDelete": "set null"
+				}
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "productImage",
+				"target": "Product",
+				"ownedBy": "image"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Order",
+			"owningSide": {
+				"type": "OneHasOne",
+				"name": "shipping",
+				"target": "Shipping",
+				"inversedBy": "order",
+				"joiningColumn": {
+					"columnName": "shipping_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasOne",
+				"name": "order",
+				"target": "Order",
+				"ownedBy": "shipping",
+				"nullable": true
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Order",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "customer",
+				"target": "User",
+				"inversedBy": "orders",
+				"joiningColumn": {
+					"columnName": "customer_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "orders",
+				"target": "Order",
+				"ownedBy": "customer"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "OrderProduct",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "order",
+				"target": "Order",
+				"inversedBy": "products",
+				"joiningColumn": {
+					"columnName": "order_id",
+					"onDelete": "restrict"
+				},
+				"nullable": false
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "products",
+				"target": "OrderProduct",
+				"ownedBy": "order"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "OrderProduct",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "product",
+				"target": "Product",
+				"inversedBy": "orders",
+				"joiningColumn": {
+					"columnName": "product_id",
+					"onDelete": "restrict"
+				},
+				"nullable": false
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "orders",
+				"target": "OrderProduct",
+				"ownedBy": "product"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Payment",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "customer",
+				"target": "User",
+				"inversedBy": "payments",
+				"joiningColumn": {
+					"columnName": "customer_id",
+					"onDelete": "restrict"
+				},
+				"nullable": false
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "payments",
+				"target": "Payment",
+				"ownedBy": "customer"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Payment",
+			"owningSide": {
+				"type": "OneHasOne",
+				"name": "order",
+				"target": "Order",
+				"inversedBy": "payment",
+				"joiningColumn": {
+					"columnName": "order_id",
+					"onDelete": "restrict"
+				},
+				"nullable": false
+			},
+			"inverseSide": {
+				"type": "OneHasOne",
+				"name": "payment",
+				"target": "Payment",
+				"ownedBy": "order",
+				"nullable": true
+			}
+		},
+		{
+			"modification": "createUniqueConstraint",
+			"entityName": "User",
+			"unique": {
+				"fields": [
+					"personId",
+					"email"
+				],
+				"name": "unique_User_personId_email"
+			}
+		},
+		{
+			"modification": "patchAclSchema",
+			"patch": [
+				{
+					"op": "add",
+					"path": "/roles/salesRepresentative",
+					"value": {
+						"variables": {
+							"personId": {
+								"type": "predefined",
+								"value": "personID"
+							}
+						},
+						"stages": "*",
+						"entities": {
+							"User": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"personId": true,
+										"name": true,
+										"email": true,
+										"phone": true,
+										"address": true,
+										"orders": true,
+										"payments": true
+									},
+									"update": {
+										"personId": true,
+										"name": true,
+										"email": true,
+										"phone": true,
+										"address": true,
+										"orders": true,
+										"payments": true
+									},
+									"create": {
+										"personId": true,
+										"name": true,
+										"email": true,
+										"phone": true,
+										"address": true,
+										"orders": true,
+										"payments": true
+									}
+								}
+							},
+							"Product": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"name": true,
+										"description": true,
+										"price": true,
+										"availableQuantity": true,
+										"image": true,
+										"orders": true
+									},
+									"update": {
+										"name": true,
+										"description": true,
+										"price": true,
+										"availableQuantity": true,
+										"image": true,
+										"orders": true
+									},
+									"create": {
+										"name": true,
+										"description": true,
+										"price": true,
+										"availableQuantity": true,
+										"image": true,
+										"orders": true
+									}
+								}
+							},
+							"Order": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"orderDate": true,
+										"shipping": true,
+										"payment": true,
+										"customer": true,
+										"products": true
+									},
+									"update": {
+										"orderDate": true,
+										"shipping": true,
+										"payment": true,
+										"customer": true,
+										"products": true
+									},
+									"create": {
+										"orderDate": true,
+										"shipping": true,
+										"payment": true,
+										"customer": true,
+										"products": true
+									}
+								}
+							},
+							"OrderProduct": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"quantity": true,
+										"order": true,
+										"product": true
+									},
+									"update": {
+										"quantity": true,
+										"order": true,
+										"product": true
+									},
+									"create": {
+										"quantity": true,
+										"order": true,
+										"product": true
+									}
+								}
+							},
+							"Shipping": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"trackingNumber": true,
+										"carrier": true,
+										"shippingDate": true,
+										"estimatedDeliveryDate": true,
+										"status": true,
+										"order": true
+									},
+									"update": {
+										"trackingNumber": true,
+										"carrier": true,
+										"shippingDate": true,
+										"estimatedDeliveryDate": true,
+										"status": true,
+										"order": true
+									},
+									"create": {
+										"trackingNumber": true,
+										"carrier": true,
+										"shippingDate": true,
+										"estimatedDeliveryDate": true,
+										"status": true,
+										"order": true
+									}
+								}
+							},
+							"Payment": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"customer": true,
+										"order": true,
+										"amount": true,
+										"date": true,
+										"method": true,
+										"status": true
+									},
+									"update": {
+										"customer": true,
+										"order": true,
+										"amount": true,
+										"date": true,
+										"method": true,
+										"status": true
+									},
+									"create": {
+										"customer": true,
+										"order": true,
+										"amount": true,
+										"date": true,
+										"method": true,
+										"status": true
+									}
+								}
+							},
+							"Image": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"url": true,
+										"width": true,
+										"height": true,
+										"size": true,
+										"type": true,
+										"alt": true,
+										"createdAt": true,
+										"productImage": true
+									},
+									"edit": {
+										"url": true,
+										"width": true,
+										"height": true,
+										"size": true,
+										"type": true,
+										"alt": true,
+										"createdAt": true,
+										"productImage": true
+									},
+									"create": {
+										"url": true,
+										"width": true,
+										"height": true,
+										"size": true,
+										"type": true,
+										"alt": true,
+										"createdAt": true,
+										"productImage": true
+									}
+								}
+							}
+						},
+						"s3": {
+							"**": {
+								"upload": true,
+								"read": true
+							}
+						},
+						"tenant": {
+							"invite": true,
+							"manage": {
+								"customer": true
+							}
+						}
+					}
+				},
+				{
+					"op": "add",
+					"path": "/roles/customer",
+					"value": {
+						"variables": {
+							"personId": {
+								"type": "predefined",
+								"value": "personID"
+							}
+						},
+						"stages": "*",
+						"entities": {
+							"User": {
+								"predicates": {
+									"predicateUsercustomer ": {
+										"personId": "personId"
+									}
+								},
+								"operations": {
+									"read": {
+										"personId": "predicateUsercustomer ",
+										"name": "predicateUsercustomer ",
+										"email": "predicateUsercustomer ",
+										"phone": "predicateUsercustomer ",
+										"address": "predicateUsercustomer ",
+										"orders": "predicateUsercustomer ",
+										"payments": "predicateUsercustomer "
+									},
+									"update": {
+										"personId": "predicateUsercustomer ",
+										"name": "predicateUsercustomer ",
+										"email": "predicateUsercustomer ",
+										"phone": "predicateUsercustomer ",
+										"address": "predicateUsercustomer ",
+										"orders": "predicateUsercustomer ",
+										"payments": "predicateUsercustomer "
+									}
+								}
+							},
+							"Product": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"name": true,
+										"description": true,
+										"price": true,
+										"availableQuantity": true,
+										"image": true
+									}
+								}
+							},
+							"Order": {
+								"predicates": {
+									"predicateOrdercustomer ": {
+										"customer": {
+											"personId": "personId"
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"orderDate": "predicateOrdercustomer ",
+										"shipping": "predicateOrdercustomer ",
+										"payment": "predicateOrdercustomer ",
+										"customer": "predicateOrdercustomer ",
+										"products": "predicateOrdercustomer "
+									},
+									"update": {
+										"orderDate": "predicateOrdercustomer ",
+										"shipping": "predicateOrdercustomer ",
+										"payment": "predicateOrdercustomer ",
+										"customer": "predicateOrdercustomer ",
+										"products": "predicateOrdercustomer "
+									}
+								}
+							},
+							"OrderProduct": {
+								"predicates": {
+									"predicateOrderProductcustomer ": {
+										"order": {
+											"customer": {
+												"personId": "personId"
+											}
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"quantity": "predicateOrderProductcustomer ",
+										"order": "predicateOrderProductcustomer ",
+										"product": "predicateOrderProductcustomer "
+									},
+									"update": {
+										"quantity": "predicateOrderProductcustomer ",
+										"order": "predicateOrderProductcustomer ",
+										"product": "predicateOrderProductcustomer "
+									}
+								}
+							},
+							"Shipping": {
+								"predicates": {
+									"predicateShippingcustomer ": {
+										"order": {
+											"customer": {
+												"personId": "personId"
+											}
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"trackingNumber": "predicateShippingcustomer ",
+										"carrier": "predicateShippingcustomer ",
+										"shippingDate": "predicateShippingcustomer ",
+										"estimatedDeliveryDate": "predicateShippingcustomer ",
+										"status": "predicateShippingcustomer ",
+										"order": "predicateShippingcustomer "
+									},
+									"update": {
+										"trackingNumber": "predicateShippingcustomer ",
+										"carrier": "predicateShippingcustomer ",
+										"shippingDate": "predicateShippingcustomer ",
+										"estimatedDeliveryDate": "predicateShippingcustomer ",
+										"status": "predicateShippingcustomer ",
+										"order": "predicateShippingcustomer "
+									}
+								}
+							},
+							"Payment": {
+								"predicates": {
+									"predicatePaymentcustomer ": {
+										"customer": {
+											"personId": "personId"
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"customer": "predicatePaymentcustomer ",
+										"order": "predicatePaymentcustomer ",
+										"amount": "predicatePaymentcustomer ",
+										"date": "predicatePaymentcustomer ",
+										"method": "predicatePaymentcustomer ",
+										"status": "predicatePaymentcustomer "
+									},
+									"update": {
+										"customer": "predicatePaymentcustomer ",
+										"order": "predicatePaymentcustomer ",
+										"amount": "predicatePaymentcustomer ",
+										"date": "predicatePaymentcustomer ",
+										"method": "predicatePaymentcustomer ",
+										"status": "predicatePaymentcustomer "
+									}
+								}
+							},
+							"Image": {
+								"predicates": {},
+								"operations": {}
+							}
+						},
+						"s3": {
+							"**": {
+								"upload": true,
+								"read": true
+							}
+						}
+					}
+				},
+				{
+					"op": "add",
+					"path": "/roles/public",
+					"value": {
+						"variables": {
+							"personId": {
+								"type": "predefined",
+								"value": "personID"
+							}
+						},
+						"stages": "*",
+						"entities": {
+							"Product": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"name": true,
+										"description": true,
+										"price": true,
+										"image": true
+									}
+								}
+							},
+							"Image": {
+								"predicates": {},
+								"operations": {}
+							}
+						},
+						"s3": {
+							"**": {
+								"upload": true,
+								"read": true
+							}
+						}
+					}
+				}
+			]
+		}
+	]
+}

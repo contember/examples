@@ -1,0 +1,938 @@
+{
+	"formatVersion": 4,
+	"modifications": [
+		{
+			"modification": "createEnum",
+			"enumName": "Priority",
+			"values": [
+				"low",
+				"medium",
+				"high"
+			]
+		},
+		{
+			"modification": "createEnum",
+			"enumName": "Status",
+			"values": [
+				"pending",
+				"completed"
+			]
+		},
+		{
+			"modification": "createEnum",
+			"enumName": "AccessLevel",
+			"values": [
+				"public",
+				"departmentOnly",
+				"projectOnly"
+			]
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "User",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "user",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Department",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "department",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Project",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "project",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Task",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "task",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Document",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "document",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "File",
+				"unique": {},
+				"indexes": {},
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "file",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "personId",
+				"columnName": "person_id",
+				"type": "Uuid",
+				"nullable": true,
+				"columnType": "uuid"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "email",
+				"columnName": "email",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "User",
+			"field": {
+				"name": "jobTitle",
+				"columnName": "job_title",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Department",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Department",
+			"field": {
+				"name": "description",
+				"columnName": "description",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Project",
+			"field": {
+				"name": "title",
+				"columnName": "title",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Project",
+			"field": {
+				"name": "description",
+				"columnName": "description",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Project",
+			"field": {
+				"name": "startDate",
+				"columnName": "start_date",
+				"type": "DateTime",
+				"nullable": true,
+				"columnType": "timestamptz"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Project",
+			"field": {
+				"name": "endDate",
+				"columnName": "end_date",
+				"type": "DateTime",
+				"nullable": true,
+				"columnType": "timestamptz"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Task",
+			"field": {
+				"name": "title",
+				"columnName": "title",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Task",
+			"field": {
+				"name": "description",
+				"columnName": "description",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Task",
+			"field": {
+				"name": "dueDate",
+				"columnName": "due_date",
+				"type": "DateTime",
+				"nullable": true,
+				"columnType": "timestamptz"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Task",
+			"field": {
+				"name": "priority",
+				"columnName": "priority",
+				"type": "Enum",
+				"nullable": true,
+				"columnType": "Priority"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Task",
+			"field": {
+				"name": "status",
+				"columnName": "status",
+				"type": "Enum",
+				"nullable": true,
+				"columnType": "Status"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Document",
+			"field": {
+				"name": "title",
+				"columnName": "title",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Document",
+			"field": {
+				"name": "description",
+				"columnName": "description",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Document",
+			"field": {
+				"name": "accessLevel",
+				"columnName": "access_level",
+				"type": "Enum",
+				"nullable": true,
+				"columnType": "AccessLevel"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "File",
+			"field": {
+				"name": "url",
+				"columnName": "url",
+				"type": "String",
+				"nullable": false,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "File",
+			"field": {
+				"name": "size",
+				"columnName": "size",
+				"type": "Integer",
+				"nullable": true,
+				"columnType": "integer"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "File",
+			"field": {
+				"name": "type",
+				"columnName": "type",
+				"type": "String",
+				"nullable": true,
+				"columnType": "integer"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "File",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"type": "String",
+				"nullable": true,
+				"columnType": "integer"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "File",
+			"field": {
+				"name": "createdAt",
+				"columnName": "created_at",
+				"type": "DateTime",
+				"nullable": false,
+				"columnType": "timestamptz",
+				"default": "now"
+			},
+			"fillValue": "now"
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "User",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "department",
+				"target": "Department",
+				"inversedBy": "employees",
+				"joiningColumn": {
+					"columnName": "department_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "employees",
+				"target": "User",
+				"ownedBy": "department"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "User",
+			"owningSide": {
+				"type": "ManyHasMany",
+				"name": "projects",
+				"target": "Project",
+				"inversedBy": "employees",
+				"joiningTable": {
+					"tableName": "user_projects",
+					"joiningColumn": {
+						"columnName": "user_id",
+						"onDelete": "cascade"
+					},
+					"inverseJoiningColumn": {
+						"columnName": "project_id",
+						"onDelete": "cascade"
+					},
+					"eventLog": {
+						"enabled": true
+					}
+				}
+			},
+			"inverseSide": {
+				"type": "ManyHasMany",
+				"name": "employees",
+				"target": "User",
+				"ownedBy": "projects"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Department",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "manager",
+				"target": "User",
+				"inversedBy": "managedDepartments",
+				"joiningColumn": {
+					"columnName": "manager_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "managedDepartments",
+				"target": "Department",
+				"ownedBy": "manager"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Project",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "department",
+				"target": "Department",
+				"inversedBy": "projects",
+				"joiningColumn": {
+					"columnName": "department_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "projects",
+				"target": "Project",
+				"ownedBy": "department"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Task",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "assignedEmployee",
+				"target": "User",
+				"inversedBy": "tasks",
+				"joiningColumn": {
+					"columnName": "assigned_employee_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "tasks",
+				"target": "Task",
+				"ownedBy": "assignedEmployee"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Task",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "project",
+				"target": "Project",
+				"inversedBy": "tasks",
+				"joiningColumn": {
+					"columnName": "project_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "tasks",
+				"target": "Task",
+				"ownedBy": "project"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Document",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "file",
+				"target": "File",
+				"inversedBy": "documentFile",
+				"nullable": true,
+				"joiningColumn": {
+					"columnName": "file_id",
+					"onDelete": "set null"
+				}
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "documentFile",
+				"target": "Document",
+				"ownedBy": "file"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Document",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "project",
+				"target": "Project",
+				"inversedBy": "documents",
+				"joiningColumn": {
+					"columnName": "project_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "documents",
+				"target": "Document",
+				"ownedBy": "project"
+			}
+		},
+		{
+			"modification": "createUniqueConstraint",
+			"entityName": "User",
+			"unique": {
+				"fields": [
+					"personId",
+					"email"
+				],
+				"name": "unique_User_personId_email"
+			}
+		},
+		{
+			"modification": "patchAclSchema",
+			"patch": [
+				{
+					"op": "add",
+					"path": "/roles/manager",
+					"value": {
+						"variables": {
+							"personId": {
+								"type": "predefined",
+								"value": "personID"
+							}
+						},
+						"stages": "*",
+						"entities": {
+							"User": {
+								"predicates": {
+									"predicateUsermanager ": {
+										"department": {
+											"manager": {
+												"personId": "personId"
+											}
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"personId": "predicateUsermanager ",
+										"name": "predicateUsermanager ",
+										"email": "predicateUsermanager ",
+										"jobTitle": "predicateUsermanager ",
+										"department": "predicateUsermanager ",
+										"tasks": "predicateUsermanager ",
+										"projects": "predicateUsermanager ",
+										"managedDepartments": "predicateUsermanager "
+									}
+								}
+							},
+							"Department": {
+								"predicates": {
+									"predicateDepartmentmanager ": {
+										"manager": {
+											"personId": "personId"
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"name": "predicateDepartmentmanager ",
+										"description": "predicateDepartmentmanager ",
+										"manager": "predicateDepartmentmanager ",
+										"employees": "predicateDepartmentmanager ",
+										"projects": "predicateDepartmentmanager "
+									},
+									"update": {
+										"name": "predicateDepartmentmanager ",
+										"description": "predicateDepartmentmanager ",
+										"manager": "predicateDepartmentmanager ",
+										"employees": "predicateDepartmentmanager ",
+										"projects": "predicateDepartmentmanager "
+									}
+								}
+							},
+							"Project": {
+								"predicates": {
+									"predicateProjectmanager ": {
+										"department": {
+											"manager": {
+												"personId": "personId"
+											}
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"title": "predicateProjectmanager ",
+										"description": "predicateProjectmanager ",
+										"startDate": "predicateProjectmanager ",
+										"endDate": "predicateProjectmanager ",
+										"department": "predicateProjectmanager ",
+										"employees": "predicateProjectmanager ",
+										"tasks": "predicateProjectmanager ",
+										"documents": "predicateProjectmanager "
+									},
+									"update": {
+										"title": "predicateProjectmanager ",
+										"description": "predicateProjectmanager ",
+										"startDate": "predicateProjectmanager ",
+										"endDate": "predicateProjectmanager ",
+										"department": "predicateProjectmanager ",
+										"employees": "predicateProjectmanager ",
+										"tasks": "predicateProjectmanager ",
+										"documents": "predicateProjectmanager "
+									},
+									"create": {
+										"title": "predicateProjectmanager ",
+										"description": "predicateProjectmanager ",
+										"startDate": "predicateProjectmanager ",
+										"endDate": "predicateProjectmanager ",
+										"department": "predicateProjectmanager ",
+										"employees": "predicateProjectmanager ",
+										"tasks": "predicateProjectmanager ",
+										"documents": "predicateProjectmanager "
+									}
+								}
+							},
+							"Task": {
+								"predicates": {
+									"predicateTaskmanager ": {
+										"project": {
+											"department": {
+												"manager": {
+													"personId": "personId"
+												}
+											}
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"title": "predicateTaskmanager ",
+										"description": "predicateTaskmanager ",
+										"dueDate": "predicateTaskmanager ",
+										"priority": "predicateTaskmanager ",
+										"status": "predicateTaskmanager ",
+										"assignedEmployee": "predicateTaskmanager ",
+										"project": "predicateTaskmanager "
+									},
+									"update": {
+										"title": "predicateTaskmanager ",
+										"description": "predicateTaskmanager ",
+										"dueDate": "predicateTaskmanager ",
+										"priority": "predicateTaskmanager ",
+										"status": "predicateTaskmanager ",
+										"assignedEmployee": "predicateTaskmanager ",
+										"project": "predicateTaskmanager "
+									},
+									"create": {
+										"title": "predicateTaskmanager ",
+										"description": "predicateTaskmanager ",
+										"dueDate": "predicateTaskmanager ",
+										"priority": "predicateTaskmanager ",
+										"status": "predicateTaskmanager ",
+										"assignedEmployee": "predicateTaskmanager ",
+										"project": "predicateTaskmanager "
+									}
+								}
+							},
+							"Document": {
+								"predicates": {
+									"predicateDocumentmanager ": {
+										"project": {
+											"department": {
+												"manager": {
+													"personId": "personId"
+												}
+											}
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"title": "predicateDocumentmanager ",
+										"description": "predicateDocumentmanager ",
+										"file": "predicateDocumentmanager ",
+										"project": "predicateDocumentmanager ",
+										"accessLevel": "predicateDocumentmanager "
+									},
+									"update": {
+										"title": "predicateDocumentmanager ",
+										"description": "predicateDocumentmanager ",
+										"file": "predicateDocumentmanager ",
+										"project": "predicateDocumentmanager ",
+										"accessLevel": "predicateDocumentmanager "
+									},
+									"create": {
+										"title": "predicateDocumentmanager ",
+										"description": "predicateDocumentmanager ",
+										"file": "predicateDocumentmanager ",
+										"project": "predicateDocumentmanager ",
+										"accessLevel": "predicateDocumentmanager "
+									}
+								}
+							},
+							"File": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"url": true,
+										"size": true,
+										"type": true,
+										"name": true,
+										"createdAt": true,
+										"documentFile": true
+									},
+									"edit": {
+										"url": true,
+										"size": true,
+										"type": true,
+										"name": true,
+										"createdAt": true,
+										"documentFile": true
+									},
+									"create": {
+										"url": true,
+										"size": true,
+										"type": true,
+										"name": true,
+										"createdAt": true,
+										"documentFile": true
+									}
+								}
+							}
+						},
+						"s3": {
+							"**": {
+								"upload": true,
+								"read": true
+							}
+						}
+					}
+				},
+				{
+					"op": "add",
+					"path": "/roles/employee",
+					"value": {
+						"variables": {
+							"personId": {
+								"type": "predefined",
+								"value": "personID"
+							}
+						},
+						"stages": "*",
+						"entities": {
+							"User": {
+								"predicates": {
+									"predicateUseremployee ": {
+										"personId": "personId"
+									}
+								},
+								"operations": {
+									"read": {
+										"personId": "predicateUseremployee ",
+										"name": "predicateUseremployee ",
+										"email": "predicateUseremployee ",
+										"jobTitle": "predicateUseremployee ",
+										"department": "predicateUseremployee ",
+										"tasks": "predicateUseremployee ",
+										"projects": "predicateUseremployee ",
+										"managedDepartments": "predicateUseremployee "
+									}
+								}
+							},
+							"Task": {
+								"predicates": {
+									"predicateTaskemployee ": {
+										"assignedEmployee": {
+											"personId": "personId"
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"title": "predicateTaskemployee ",
+										"description": "predicateTaskemployee ",
+										"dueDate": "predicateTaskemployee ",
+										"priority": "predicateTaskemployee ",
+										"status": "predicateTaskemployee ",
+										"assignedEmployee": "predicateTaskemployee ",
+										"project": "predicateTaskemployee "
+									},
+									"update": {
+										"title": "predicateTaskemployee ",
+										"description": "predicateTaskemployee ",
+										"dueDate": "predicateTaskemployee ",
+										"priority": "predicateTaskemployee ",
+										"status": "predicateTaskemployee ",
+										"assignedEmployee": "predicateTaskemployee ",
+										"project": "predicateTaskemployee "
+									}
+								}
+							},
+							"Document": {
+								"predicates": {
+									"predicateDocumentemployee ": {
+										"project": {
+											"employees": {
+												"personId": "personId"
+											}
+										}
+									}
+								},
+								"operations": {
+									"read": {
+										"title": "predicateDocumentemployee ",
+										"description": "predicateDocumentemployee ",
+										"file": "predicateDocumentemployee ",
+										"project": "predicateDocumentemployee ",
+										"accessLevel": "predicateDocumentemployee "
+									}
+								}
+							},
+							"File": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"url": true,
+										"size": true,
+										"type": true,
+										"name": true,
+										"createdAt": true,
+										"documentFile": true
+									}
+								}
+							}
+						},
+						"s3": {
+							"**": {
+								"upload": true,
+								"read": true
+							}
+						}
+					}
+				}
+			]
+		}
+	]
+}
