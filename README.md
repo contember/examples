@@ -1,8 +1,8 @@
 <div align="center">
 	<a href="https://www.contember.com/" target="_blank">
 			<picture>
-				<source media="(prefers-color-scheme: dark)" srcset=".github/assets/logo_l.svg">
-				<img height="220" alt="Contember Interface logo (dark or light)" src=".github/assets/logo_d.svg">
+				<source media="(prefers-color-scheme: dark)" srcset=".github/assets/logo_d.svg">
+				<img height="220" alt="Contember Interface logo (dark or light)" src=".github/assets/logo_l.svg">
 		</picture>
 	</a>
 </div>

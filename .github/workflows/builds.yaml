@@ -1,0 +1,42 @@
+name: Builds
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        folder: 
+        - asset-management
+        - b2b-portal
+        - compliance
+        - contract-management
+        - crm-system
+        - domain-specific-dashboard
+        - event-erp
+        - headless-cms
+        - internal-information-system
+        - membership-management
+        - order-management
+        - reservation-management
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Install dependencies
+      working-directory: ./${{ matrix.folder }}
+      run: npm install
+
+    - name: Start engine
+      working-directory: ./${{ matrix.folder }}
+      run: npm run start-engine
+
+    - name: Build
+      working-directory: ./${{ matrix.folder }}
+      run: npm run build
